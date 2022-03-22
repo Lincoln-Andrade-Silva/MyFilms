@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { NavComponent } from './nav/nav.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NavComponent } from './nav/nav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatCardModule,
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

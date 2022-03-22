@@ -1,1 +1,8 @@
-<h1>Home</h1>
+<div class="card-filmes">
+    <div *ngFor="let filmes of filmes" style="margin: 1vw; text-align: center; box-shadow: 8px 4px 4px #c6c6c6;">
+        <img mat-card-image style="height: 60vh;" src="{{filmes.foto}}">
+        <div class="desc-film">
+                {{filmes.nome}}
+        </div>
+    </div>
+</div>

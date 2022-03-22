@@ -1,0 +1,15 @@
+@import './../../styles';
+
+nav.navbar{
+    background-color: $secondary-color !important;
+}
+a.nav-link{
+    color: $primary-darker !important;
+}
+a.active{
+    color: $primary-color !important;
+    border-bottom: 1px solid;
+}
+.navbar-brand{
+    color: $primary-color !important;
+}

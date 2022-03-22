@@ -1,0 +1,16 @@
+@import './../../styles';
+
+#footer{
+    background-color: $secondary-color !important;
+    height: 10vh;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+
+    .footer-texto{
+        color: $primary-color;
+        text-align: center;
+        font-size: 24px;
+    }
+
+}

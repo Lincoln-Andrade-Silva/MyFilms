@@ -1,1 +1,11 @@
 @import "/src/app/home/home.component.scss";
+
+$primary-color: #66FCF1;
+$primary-darker: #45A29E;
+$secondary-color: #0B0C10;
+$secondary-light: #1F2833;
+$text-color: #C5C6C7;
+
+body{
+    background-color: $secondary-light !important;
+}

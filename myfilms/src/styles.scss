@@ -1,4 +1,7 @@
-@import "/src/app/home/home.component.scss";
+@font-face{
+    font-family: 'Space Mono';
+    src: url("../src/assets/fonts/Space_Mono/SpaceMono-Regular.ttf");
+}
 
 $primary-color: #66FCF1;
 $primary-darker: #45A29E;
@@ -8,4 +11,7 @@ $text-color: #C5C6C7;
 
 body{
     background-color: $secondary-light !important;
+}
+*{
+    font-family: 'Space Mono', monospace;
 }

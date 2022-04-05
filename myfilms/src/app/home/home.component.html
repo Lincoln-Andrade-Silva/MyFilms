@@ -1,13 +1,18 @@
 <section id="catalogo-filmes">
     <div class="catalogo-line"></div>
     <div class="card-filmes" *ngFor="let filmes of filmes">
-        <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
+        <div *ngIf="filmes.foto; else noImg">
+            <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
+        </div>
+        <ng-template  #noImg>
+            <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
+        </ng-template>
         <div class="card-inner info">
             <h3 class="filme-nome">
-                {{filmes.nome}}
+            {{filmes.nome}}
             </h3>
             <h6 class="filme-desc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor.            
             </h6>
         </div>
     </div>

@@ -15,7 +15,7 @@ export const Filmes = [
         id:3,
         nome: 'A Hora do Pesadelo 3',
         desc: 'pipipipopopo',
-        foto: '/assets/images/A-Hora-Do-Pesadelo3.jpg'
+        foto: '',
     },
     {
         id:4,

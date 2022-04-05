@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +29,7 @@ import { MatSliderModule } from '@angular/material/slider';
     AppRoutingModule,
     MatCardModule,
     MatSliderModule,
+    MdbRippleModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

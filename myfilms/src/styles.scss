@@ -1,3 +1,11 @@
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100");
+
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
 @font-face{
     font-family: 'Space Mono';
     src: url("../src/assets/fonts/Space_Mono/SpaceMono-Regular.ttf");
@@ -13,5 +21,57 @@ body{
     background-color: $secondary-light !important;
 }
 *{
-    font-family: 'Space Mono', monospace;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ripples {
+    overflow: hidden;
+    position: relative;
+}
+
+.waves {
+    position: absolute;
+    display: block;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-transform: scale(0);
+       -moz-transform: scale(0);
+         -o-transform: scale(0);
+            transform: scale(0);
+}
+
+.ripple {
+    -webkit-animation: ripple 0.65s linear;
+       -moz-animation: ripple 0.65s linear;
+        -ms-animation: ripple 0.65s linear;
+         -o-animation: ripple 0.65s linear;
+            animation: ripple 0.65s linear;
+}
+
+@-webkit-keyframes ripple {
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(2.5);
+    }
+}
+
+@-moz-keyframes ripple {
+    100% {
+        opacity: 0;
+        -moz-transform: scale(2.5);
+    }
+}
+
+@-o-keyframes ripple {
+    100% {
+        opacity: 0;
+        -o-transform: scale(2.5);
+    }
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
 }

@@ -13,3 +13,10 @@ a.active{
 .navbar-brand{
     color: $primary-color !important;
 }
+#navbarNav{
+    display: flex;
+    justify-content: space-between;
+}
+a.login-button{
+    color: white !important;
+}

@@ -3,19 +3,19 @@
     {
       "id": 1,
       "nome": "A Hora do Pesadelo",
-      "desc": "pipipipopopo",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/A-Hora-Do-Pesadelo.jpg"
     },
     {
       "id": 2,
       "nome": "A Hora do Pesadelo 2",
-      "desc": "pipipipopopo",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/A-Hora-Do-Pesadelo2.jpg"
     },
     {
       "id": 3,
       "nome": "A Hora do Pesadelo 3",
-      "desc": "pipipipopopo",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": ""
     }
   ]

@@ -13,6 +13,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { NavComponent } from './nav/nav.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatSliderModule } from '@angular/material/slider';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { MatSliderModule } from '@angular/material/slider';
     MatCardModule,
     MatSliderModule,
     MdbRippleModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

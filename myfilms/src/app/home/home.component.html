@@ -1,18 +1,20 @@
-<section id="catalogo-filmes">
+{{groupedFilmes.map(([group, filmes]) => (
+<section id="catalogo-filmes" key={group}>
     <div class="card-filmes" *ngFor="let filmes of filmes" routerLink="/filme-details/{{filmes.id}}">
         <div *ngIf="filmes.foto; else noImg">
             <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
         </div>
-        <ng-template  #noImg>
+        <ng-template #noImg>
             <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
         </ng-template>
         <div class="card-inner info">
             <h3 class="filme-nome">
-            {{ filmes.nome }}
+                {{ filmes.nome }}
             </h3>
             <h6 class="filme-desc">
-                {{ filmes.desc }}
+                {{ truncate(filmes.desc) }}
             </h6>
         </div>
     </div>
 </section>
+))}}

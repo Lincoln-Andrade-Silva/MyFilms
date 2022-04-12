@@ -1,17 +1,17 @@
 <section id="catalogo-filmes">
-    <div class="card-filmes" *ngFor="let filmes of filmes" routerLink="/filme-details/{{filmes.id}}">
-        <div *ngIf="filmes.foto; else noImg">
-            <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
+    <div class="card-filmes">
+        <div *ngIf="filme.foto; else noImg">
+            <img mat-card-image src="{{filme.foto}}" class="filme-foto">
         </div>
         <ng-template  #noImg>
             <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
         </ng-template>
         <div class="card-inner info">
             <h3 class="filme-nome">
-            {{ filmes.nome }}
+            {{ filme.nome }}
             </h3>
             <h6 class="filme-desc">
-                {{ filmes.desc }}
+                {{ filme.desc }}
             </h6>
         </div>
     </div>

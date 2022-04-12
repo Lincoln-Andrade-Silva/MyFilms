@@ -10,19 +10,17 @@ import { Filme } from 'src/models/Filme';
 export class HomeComponent implements OnInit {
 
   filmes : Filme[];
-  colunas: string[] = ['id', 'nome', 'desc', 'foto'];
 
   constructor(private service : FilmesService) {
     this.filmes = [];
    }
 
-  ngOnInit(): void {
+  ngOnInit(): void {  
+
     this.service.listar().subscribe(filmes => {
       console.log(filmes);
       this.filmes = filmes;
     });
-
   }
-
 }
 

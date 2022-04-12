@@ -1,31 +1,23 @@
 @import './../../styles';
 
-
-
 section#catalogo-filmes{
 
     display: flex;
     flex-direction: row;
     margin-top: 1rem;
-	max-width: 100vh;
+	max-width: 100%;
 	height: auto;
 	min-height: 50vh;
 	margin-bottom: 90px;
-	overflow: scroll;
-	
-	.catalogo-line{
-		border-bottom: solid 2px $primary-color;
-		width: 100vh;
-		position: absolute;
-		top: 35vh;
-	}
-
+	overflow-x: scroll;
+	overflow-y: hidden;
+	cursor: pointer;
 
     .card-filmes{
-    	width: 280px;
-		min-width: 280px;
-    	height: 360px;
-		min-height: 360px;
+    	width: 38vh;
+		min-width: 38vh;
+    	height: 55vh;
+		min-height: 50vh;
     	border-radius: 15px;
     	padding: 1.5rem;
     	background: white;

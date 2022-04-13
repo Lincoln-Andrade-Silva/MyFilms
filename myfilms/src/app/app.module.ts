@@ -28,6 +28,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CarrinhoComponent } from './carrinho/carrinho.component';  
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';  
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AdminComponent,
     SobreComponent,
     NavComponent,
-    FilmeDetailsComponent
+    FilmeDetailsComponent,
+    CarrinhoComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatRadioModule,
     MatSelectModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserModule
 
   ],
   providers: [],

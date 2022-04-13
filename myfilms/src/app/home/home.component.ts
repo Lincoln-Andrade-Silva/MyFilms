@@ -13,7 +13,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private service: FilmesService) {
     this.filmes = [];
-
   }
 
   get groupedFilmes() {
@@ -35,7 +34,7 @@ export class HomeComponent implements OnInit {
 
   truncate(str: string | undefined) {
     if (str) {
-      return str.length > 20 ? str.substring(0, 160) + '...' : str;
-    } else { return }
+      return str.length > 20 ? str.substring(0, 200) + '...' : str;
+    } else { return str }
   }
 }

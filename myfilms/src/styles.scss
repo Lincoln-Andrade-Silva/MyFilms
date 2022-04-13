@@ -6,27 +6,48 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,100");
 
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
-@font-face{
-    font-family: 'Space Mono';
-    src: url("../src/assets/fonts/Space_Mono/SpaceMono-Regular.ttf");
-}
 
-$primary-color: #66FCF1;
-$primary-darker: #45A29E;
-$secondary-color: #0B0C10;
-$secondary-light: #1F2833;
+$primary-color:  #7269cf;
+$primary-darker:  #3d4489;
+$secondary-color: #000017;
+$secondary-light: #17234a;
+$tertiary-color: #b591ff;
 $text-color: #C5C6C7;
 
 body{
-    background-color: $secondary-light !important;
+    background-color: $secondary-color !important;
 }
 *{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .ripples {
     overflow: hidden;
     position: relative;
+}
+
+.btn-primary{
+    background-color: $primary-color !important;
+    font-weight: 600;
+
+    &:hover{
+        background-color: $primary-darker !important;
+    }
+}
+span.bg-primary{
+    background-color: $tertiary-color !important;
+    font-weight: 600;
+}
+
+.btn-outline-primary{
+    color: $primary-color !important;
+    border-color: $primary-color;
+    font-weight: 600;
+
+    &:hover{
+        color: $primary-darker !important;
+        border-color: $primary-darker;
+    }
 }
 
 .waves {

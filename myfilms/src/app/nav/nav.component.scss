@@ -2,12 +2,16 @@
 
 nav.navbar{
     background-color: $secondary-color !important;
+    font-weight: 600;
 }
 a.nav-link{
-    color: $primary-darker !important;
+    color: $primary-color !important;
+    &:hover{
+        color: $tertiary-color !important;
+    }
 }
 a.active{
-    color: $primary-color !important;
+    color: $tertiary-color !important;
     border-bottom: 1px solid;
 }
 .navbar-brand{
@@ -19,4 +23,26 @@ a.active{
 }
 a.login-button{
     color: white !important;
+    background-color: $primary-color !important;
+    margin-right: 10%;
+    min-width: 100px;
+
+    &:hover{
+        background-color: $primary-darker !important;
+        color: white !important;
+    }
+}
+ul.right-nav{
+    align-items: center;
+    min-width: 100px;
+    & > .nav-item{
+        margin-right: 20px;
+    }
+}
+ul.left-nav{
+    align-items: center;
+    min-width: 100px;
+    & > .nav-item{
+        margin-left: 20px;
+    }
 }

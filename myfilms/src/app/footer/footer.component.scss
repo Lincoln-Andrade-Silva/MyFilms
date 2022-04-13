@@ -1,16 +1,16 @@
 @import './../../styles';
 
-#footer{
-    background-color: $secondary-color !important;
+footer{
     height: 10vh;
     margin-top: 10vh;
     width: 100%;
-    bottom: 0;
 
-    .footer-texto{
-        color: $primary-color;
-        text-align: center;
-        font-size: 24px;
+    a{
+        color: $primary-color !important; 
+    }
+
+    i{
+        font-size: 40px;
     }
 
 }

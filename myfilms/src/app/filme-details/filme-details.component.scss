@@ -1,0 +1,50 @@
+@import './../../styles';
+
+section#filme-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+div.filme-card{
+    max-width: 90vh;
+    margin-top: 100px;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+    
+}
+img.filme-foto{
+    max-height: 450px;
+    border-radius: 15px;
+    box-shadow: 0px 7px 10px rgba(black, 0.5);
+}
+div.filme-right{
+    color: white;
+    margin-left: 30px;
+}
+.filme-button {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 45%;
+}
+.filme-nome{
+    font-weight: 600;
+}
+.filme-desc{
+    font-weight: 300;
+    line-height: 1.5;
+}
+.filme-botoes {
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    justify-content: space-between;
+}
+.filme-subcategorias{
+    margin-top: 20px;
+    line-height: 2;
+    font-weight: 300;
+}

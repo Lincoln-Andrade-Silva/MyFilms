@@ -1,18 +1,55 @@
-<section id="catalogo-filmes">
-    <div class="card-filmes">
-        <div *ngIf="filme.foto; else noImg">
-            <img mat-card-image src="{{filme.foto}}" class="filme-foto">
+<section id="filme-details">
+    <div class="filme-card">
+
+        <div class="filme-left">
+            <div *ngIf="filme.foto; else noImg">
+                <img mat-card-image src="{{filme.foto}}" class="filme-foto">
+            </div>
+
+            <ng-template  #noImg>
+                <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
+            </ng-template>
+
+
+            <div class="filme-botoes">    
+                <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button">
+                    <span class="filme-preco">
+                        ${{ filme.preco_fixo }}
+                    </span> 
+
+                    <span class="filme-acao">
+                        <i class="fas fa-film"></i>
+                        Comprar
+                    </span>
+                </a>
+                <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button">
+                    <span class="filme-preco">
+                        ${{ filme.preco_aluguel }}
+                    </span> 
+
+                    <span class="filme-acao">
+                        <i class="far fa-clock"></i> 
+                        Alugar
+                    </span>
+                </a>
+            </div>
         </div>
-        <ng-template  #noImg>
-            <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
-        </ng-template>
-        <div class="card-inner info">
-            <h3 class="filme-nome">
+
+        <div class="filme-right">
+            <h1 class="filme-nome">
             {{ filme.nome }}
-            </h3>
-            <h6 class="filme-desc">
+            </h1>
+
+            <h5 class="filme-desc">
                 {{ filme.desc }}
+            </h5>
+
+            <h6 class="filme-subcategorias">
+                Data de Lancamento: {{ filme.data_lancamento }}
+                Diretor: {{ filme.diretor }}
             </h6>
+
         </div>
+
     </div>
 </section>

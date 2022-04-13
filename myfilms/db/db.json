@@ -12,7 +12,7 @@
     {
       "id": 2,
       "nome": "A Hora do Pesadelo 2",
-      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+      "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/A-Hora-Do-Pesadelo2.jpg",
       "categoria": "Terror",
       "preco_aluguel": "10.00",
@@ -34,7 +34,9 @@
       "foto": "/assets/images/Meu-Malvado-Favorito.jpg",
       "categoria": "Infantil",
       "preco_aluguel": "10.00",
-      "preco_fixo": "20.00"
+      "preco_fixo": "20.00",
+      "data_lancamento": "20 de dezembro de 2011",
+      "diretor": "Tony garrido"
     }
   ]
 }

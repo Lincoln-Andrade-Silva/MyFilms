@@ -1,4 +1,4 @@
-<section id="catalogo-filmes" key={group}>
+<section id="catalogo-filmes">
     <div class="card-filmes" *ngFor="let filmes of filmes" routerLink="/filme-details/{{filmes.id}}">
         <div *ngIf="filmes.foto; else noImg">
             <img mat-card-image src="{{filmes.foto}}" class="filme-foto">

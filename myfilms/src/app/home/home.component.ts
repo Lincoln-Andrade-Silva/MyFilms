@@ -10,6 +10,7 @@ import { Filme } from 'src/models/Filme';
 export class HomeComponent implements OnInit {
 
   filmes: Filme[];
+  catfilm: string = '';
 
   constructor(private service: FilmesService) {
     this.filmes = [];
@@ -26,10 +27,10 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.service.listar().subscribe(filmes => {
-      console.log(filmes);
-      this.filmes = filmes;
-    });
+    this.service.listar()
+      .subscribe(filmes => {
+        this.filmes = filmes
+      })
   }
 
   truncate(str: string | undefined) {

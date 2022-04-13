@@ -1,4 +1,3 @@
-{{groupedFilmes.map(([group, filmes]) => (
 <section id="catalogo-filmes" key={group}>
     <div class="card-filmes" *ngFor="let filmes of filmes" routerLink="/filme-details/{{filmes.id}}">
         <div *ngIf="filmes.foto; else noImg">
@@ -17,4 +16,3 @@
         </div>
     </div>
 </section>
-))}}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Filme } from 'src/models/Filme';
+import { CarrinhoService } from 'src/services/carrinho.service';
 import { FilmesService } from 'src/services/filmes.service';
 
 @Component({
@@ -10,6 +12,7 @@ import { FilmesService } from 'src/services/filmes.service';
 })
 export class FilmeDetailsComponent implements OnInit {
 
+  itensDoCarrinho: Observable<Filme[]> = new Observable<Filme[]>()
   filme: Filme = new Filme();
 
   ngOnInit(): void {
@@ -17,11 +20,24 @@ export class FilmeDetailsComponent implements OnInit {
     this.service.buscarPorId(String(id)).subscribe(filme => {
       this.filme = filme;
     })
+    this.itensDoCarrinho = this.service.listar();
   }
 
   constructor(private service: FilmesService,
-    private router: Router,
-    private route: ActivatedRoute) {
+    private carrinhoService: CarrinhoService,
+    private route: ActivatedRoute) { }
+
+  adicionarAoCarrinhoAluguel(filme: Filme) {
+    this.filme.preco = this.filme.preco_aluguel;
+    this.filme.tipo = 'Aluguel';
+    this.carrinhoService.incrementarUmItem(filme);
   }
+
+  adicionarAoCarrinhoCompra(filme: Filme) {
+    this.filme.preco = this.filme.preco_fixo;
+    this.filme.tipo = 'Compra';
+    this.carrinhoService.incrementarUmItem(filme);
+  }
+
 
 }

@@ -6,29 +6,31 @@
                 <img mat-card-image src="{{filme.foto}}" class="filme-foto">
             </div>
 
-            <ng-template  #noImg>
+            <ng-template #noImg>
                 <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
             </ng-template>
 
 
-            <div class="filme-botoes">    
-                <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button">
+            <div class="filme-botoes">
+                <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button" routerLink="/carrinho"
+                    (click)="adicionarAoCarrinhoCompra(filme)">
                     <span class="filme-preco">
                         ${{ filme.preco_fixo }}
-                    </span> 
+                    </span>
 
                     <span class="filme-acao">
                         <i class="fas fa-film"></i>
                         Comprar
                     </span>
                 </a>
-                <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button">
+                <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button" routerLink="/carrinho"
+                    (click)="adicionarAoCarrinhoAluguel(filme)">
                     <span class="filme-preco">
                         ${{ filme.preco_aluguel }}
-                    </span> 
+                    </span>
 
                     <span class="filme-acao">
-                        <i class="far fa-clock"></i> 
+                        <i class="far fa-clock"></i>
                         Alugar
                     </span>
                 </a>
@@ -37,7 +39,7 @@
 
         <div class="filme-right">
             <h1 class="filme-nome">
-            {{ filme.nome }}
+                {{ filme.nome }}
             </h1>
 
             <h5 class="filme-desc">

@@ -1,31 +1,73 @@
-    <table mat-table [dataSource]="filmes">
+<div *ngIf="isCarrinhoVazio | async" class="divVazio">
+    <span style="color: white;">Seu carrinho está vazio! </span>
+    <img src="/assets/images/icone_triste.png" style="height: 20px;">
+</div>
 
-        <ng-container matColumnDef=" ">
-            <th mat-header-cell *matHeaderCellDef class="ng-container-foto"></th>
-            <td mat-cell *matCellDef="let filmes" class="ng-container-foto"><img mat-card-image src="{{filmes.foto}}"
-                    class="filme-foto"></td>
-        </ng-container>
+<table *ngIf="!(isCarrinhoVazio | async)" mat-table [dataSource]="itensDoCarrinho">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tr-header-carrinho"></tr>
+    <ng-container matColumnDef=" ">
+        <th mat-header-cell *matHeaderCellDef class="ng-container-vazio"></th>
+        <td mat-cell *matCellDef="let filme" class="ng-container-vazio"><img mat-card-image src="{{filme.foto}}" class="filme-foto"></td>
+    </ng-container>
 
-        <ng-container matColumnDef="Nome">
-            <th mat-header-cell *matHeaderCellDef class="ng-container"> Nome </th>
-            <td mat-cell *matCellDef="let filmes " class="ng-container"> {{filmes.nome}} </td>
-        </ng-container>
+    <ng-container matColumnDef="Nome">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"> Nome </th>
+        <td mat-cell *matCellDef="let filme " class="ng-container"> {{filme.nome}} </td>
+    </ng-container>
 
-        <ng-container matColumnDef="Categoria">
-            <th mat-header-cell *matHeaderCellDef class="ng-container"> Categoria </th>
-            <td mat-cell *matCellDef="let filmes" class="ng-container"> {{filmes.categoria}} </td>
-        </ng-container>
+    <ng-container matColumnDef="Tipo">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"> Tipo </th>
+        <td mat-cell *matCellDef="let filme" class="ng-container"> {{filme.tipo}} </td>
+    </ng-container>
 
-        <ng-container matColumnDef="Preço">
-            <th mat-header-cell *matHeaderCellDef class="ng-container"> Preço </th>
-            <td mat-cell *matCellDef="let filmes" class="ng-container"> $00.00 </td>
-        </ng-container>
+    <ng-container matColumnDef="Valor-uni">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"> Valor Unitário </th>
+        <td mat-cell *matCellDef="let filme" class="ng-container"> R${{filme.preco}} </td>
+    </ng-container>
 
-        <ng-container matColumnDef="Total">
-            <th mat-header-cell *matHeaderCellDef class="ng-container"> Total </th>
-            <td mat-cell *matCellDef="let filmes" class="ng-container"> $00.00 </td>
-        </ng-container>
+    <ng-container matColumnDef="SubTotal">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"> SubTotal </th>
+        <td mat-cell *matCellDef="let filme" class="ng-container"> R${{getSubtotal(filme)}} </td>
+    </ng-container>
 
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
-    </table>
+    <ng-container matColumnDef="Quantidade">
+        <th mat-header-cell *matHeaderCellDef class="ng-container">
+            Quantidade
+        </th>
+        <td mat-cell *matCellDef="let filme" class="ng-container">
+            {{filme.quantidade}}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="hehe">
+        <th mat-header-cell *matHeaderCellDef class="ng-container-vazio"></th>
+        <td mat-footer-cell *matFooterCellDef colspan="2" class="ng-container-vazio"></td>
+    </ng-container>
+
+    <ng-container matColumnDef="lbltotal">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
+        <td mat-footer-cell *matFooterCellDef class="ng-container">
+            Valor total
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
+        <td mat-footer-cell *matFooterCellDef class="ng-container">
+            {{ formatar(valorTotalDoPedido) }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="confirmar">
+        <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
+        <td mat-footer-cell *matFooterCellDef class="ng-container">
+            <button mat-raised-button color="primary">
+                Confirmar pedido
+            </button>
+        </td>
+    </ng-container>
+  
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="['hehe', 'lbltotal', 'total', 'confirmar']"></tr>
+
+</table>

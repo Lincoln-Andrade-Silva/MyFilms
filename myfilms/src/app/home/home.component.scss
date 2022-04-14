@@ -1,5 +1,16 @@
 @import './../../styles';
 
+.search{
+	position: relative;
+	width: 100%;
+}
+
+.search-itens{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
 section#catalogo-filmes::-webkit-scrollbar {
 	width: 0.3em;
 	background-color: transparent;

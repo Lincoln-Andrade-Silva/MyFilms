@@ -31,6 +31,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
+import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { SearchPipe } from './pipes/search.pipe';
     NavComponent,
     FilmeDetailsComponent,
     CarrinhoComponent,
-    SearchPipe
+    SearchPipe,
+    CategoriaFilterPipe
   ],
   imports: [
     BrowserModule,

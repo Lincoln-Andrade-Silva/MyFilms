@@ -3,6 +3,8 @@
 .search{
 	position: relative;
 	width: 100%;
+	margin-bottom: 5vh;
+	margin-top: 5vh;
 }
 
 .search-itens{
@@ -27,7 +29,6 @@ section#catalogo-filmes {
 	margin-top: 1rem;
 	max-width: 100%;
 	height: auto;
-	min-height: 10vh;
 	margin-bottom: 90px;
 	overflow-x: scroll;
 	overflow-y: hidden;
@@ -35,9 +36,9 @@ section#catalogo-filmes {
 
 	.card-filmes {
 		width: 30vh;
-		min-width: 25vh;
+		min-width: 30vh;
 		height: 45vh;
-		min-height: 40vh;
+		min-height: 45vh;
 		border-radius: 15px;
 		padding: 1.5rem;
 		background: white;

@@ -32,7 +32,6 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
 
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -12,20 +12,9 @@ export class HomeComponent implements OnInit {
   filmes: Filme[];
   search: string = 'All';
   field: string = 'categoria';
-  checked: boolean = true;
 
   constructor(private service: FilmesService) {
     this.filmes = [];
-  }
-
-  get groupedFilmes() {
-    return Object.entries(
-      this.filmes.reduce((filmes, filme) => {
-        const categoria = filme.categoria;
-        filmes[categoria] = filmes[categoria] ? [...filmes[categoria], filme] : [filme];
-        return filmes
-      }, {} as { [key: string]: Filme[] })
-    )
   }
 
   ngOnInit(): void {
@@ -34,7 +23,7 @@ export class HomeComponent implements OnInit {
         this.filmes = filmes
       })
   }
-
+ 
   truncate(str: string | undefined) {
     if (str) {
       return str.length > 20 ? str.substring(0, 200) + '...' : str;

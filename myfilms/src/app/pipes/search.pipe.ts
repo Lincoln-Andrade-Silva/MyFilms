@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Filme } from 'src/models/Filme';
 
 @Pipe({
   name: 'filter'

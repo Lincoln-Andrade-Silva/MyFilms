@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   filmes: Filme[];
   search: string = 'All';
-  field: string = 'categoria';
+  field: string = 'Categoria';
 
   constructor(private service: FilmesService) {
     this.filmes = [];

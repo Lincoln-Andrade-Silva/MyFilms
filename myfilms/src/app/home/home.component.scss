@@ -1,13 +1,14 @@
 @import './../../styles';
 
-.search{
+//novo
+.search { 
 	position: relative;
 	width: 100%;
 	margin-bottom: 5vh;
 	margin-top: 5vh;
 }
-
-.search-itens{
+//novo
+.search-itens {
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -25,13 +26,15 @@ section#catalogo-filmesy::-webkit-scrollbar-thumb {
 section#catalogo-filmes {
 	scrollbar-width: thin;
 	display: flex;
-	flex-direction: row;
+	flex-wrap: wrap; //novo
+	// display: flex;
+	//flex-direction: row;
 	margin-top: 1rem;
-	max-width: 100%;
+	width: 100%; //novo
 	height: auto;
 	margin-bottom: 90px;
-	overflow-x: scroll;
-	overflow-y: hidden;
+	// overflow-x: scroll;
+	// overflow-y: hidden;
 	cursor: pointer;
 
 	.card-filmes {
@@ -47,7 +50,7 @@ section#catalogo-filmes {
 		align-items: flex-end;
 		transition: 0.4s ease-out;
 		box-shadow: 0px 7px 10px rgba(black, 0.5);
-		margin: 0 20px;
+		margin: 20px;  //novo
 
 		&:hover {
 

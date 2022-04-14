@@ -1,5 +1,30 @@
+<select placeholder="Category" [(ngModel)]="field">
+    <option>
+        categoria
+    </option>
+    <option>
+        nome
+    </option>
+</select>
+<div *ngIf="field === 'categoria'">
+    <select placeholder="Category" [(ngModel)]="search">
+        <option>
+            All
+        </option>
+        <option>
+            Terror
+        </option>
+        <option>
+            Infantil
+        </option>
+    </select>
+</div>
+
+<input *ngIf="field === 'nome'" type="text" [(ngModel)]="search" placeholder="Search by name" />
+
 <section id="catalogo-filmes">
-    <div class="card-filmes" *ngFor="let filmes of filmes" routerLink="/filme-details/{{filmes.id}}">
+    <div class="card-filmes" *ngFor="let filmes of filmes | filter : search: field"
+        routerLink="/filme-details/{{filmes.id}}">
         <div *ngIf="filmes.foto; else noImg">
             <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
         </div>

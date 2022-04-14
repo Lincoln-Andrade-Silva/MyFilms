@@ -10,7 +10,9 @@ import { Filme } from 'src/models/Filme';
 export class HomeComponent implements OnInit {
 
   filmes: Filme[];
-  catfilm: string = '';
+  search: string = 'All';
+  field: string = 'categoria';
+  checked: boolean = true;
 
   constructor(private service: FilmesService) {
     this.filmes = [];

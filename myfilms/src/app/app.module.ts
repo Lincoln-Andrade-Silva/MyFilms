@@ -30,6 +30,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SobreComponent,
     NavComponent,
     FilmeDetailsComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

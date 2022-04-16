@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   search: string = '';
   searchcat: string = 'Categoria';
   field: string = 'Nome';
+  keyword: string = 'nome'
 
   constructor(private service: FilmesService) {
     this.filmes = [];

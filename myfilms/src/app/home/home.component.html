@@ -1,13 +1,24 @@
 <div class="search">
-    <div class="search-itens"> <input type="text" [(ngModel)]="search" placeholder="Search" />
-        <select placeholder="Category" [(ngModel)]="field">
-            <option>
-                Nome
-            </option>
-            <option>
-                Diretor
-            </option>
-        </select>
+    <div class="search-itens">
+
+        <ng-autocomplete 
+            [data]="filmes" 
+            [searchKeyword]="keyword" 
+            placeholder="Search by name"
+            [itemTemplate]="itemTemplate" 
+            [notFoundTemplate]="notFoundTemplate"
+            [(ngModel)]="search"
+        >
+        </ng-autocomplete>
+
+        <ng-template #itemTemplate let-item>
+            <a [innerHTML]="item.nome"></a>
+        </ng-template>
+            
+        <ng-template #notFoundTemplate let-notFound>
+            <div [innerHTML]="notFound"></div>
+        </ng-template>
+
         <select placeholder="Category" [(ngModel)]="searchcat">
             <option>
                 Categoria
@@ -26,7 +37,8 @@
 </div>
 
 <section id="catalogo-filmes">
-    <div class="card-filmes" *ngFor="let filmes of filmes | filter: search: field.toLowerCase() | categoriaFilter: searchcat"
+    <div class="card-filmes"
+        *ngFor="let filmes of filmes | filter: search: field.toLowerCase() | categoriaFilter: searchcat"
         routerLink="/filme-details/{{filmes.id}}">
         <div *ngIf="filmes.foto; else noImg">
             <img mat-card-image src="{{filmes.foto}}" class="filme-foto">

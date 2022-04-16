@@ -32,6 +32,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
 import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
+import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
 @NgModule({
   declarations: [
@@ -69,8 +70,8 @@ import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    AutocompleteLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

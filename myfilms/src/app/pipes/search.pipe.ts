@@ -5,14 +5,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(filmes: any[], search: string, field: string): any[] {
-    if (!filmes) return [];
-    if (!search) return filmes;
-    if (search == 'All')return filmes;
+  transform(array: any[], search: string, field: string): any[] {
+    if (!array) return [];
+    if (!search) return array;
+    if (search == 'All')return array;
     search = search.toLowerCase();
-    return filmes.filter(filme => {
-      if (filme && filme[field]) {
-        return filme[field].toLowerCase().includes(search);
+    return array.filter(array => {
+      if (array && array[field]) {
+        return array[field].toLowerCase().includes(search);
       }
       return false;
     });

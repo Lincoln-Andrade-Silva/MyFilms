@@ -1,3 +1,16 @@
+.carrinho {
+    position: relative;
+	width: 100%;
+	margin-bottom: 5vh;
+	margin-top: 5vh;
+}
+
+.carrinho-content {
+    display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
 .filme-foto {
     width: 4em;
     height: 5em;

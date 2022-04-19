@@ -1,0 +1,42 @@
+@import './../../../styles';
+
+.container {
+    margin-left: 10rem;
+    margin-top: 2rem;
+    margin-bottom: 1 5em;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    color: white;
+    border: 1px solid white;
+    width: 90%;
+}
+
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+input {
+    margin-top: 40px;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+label {
+    margin-bottom: 2rem;
+}
+
+mat-option {
+    color: white;
+}
+
+mat-select {
+    width: 10vw;
+    border: 1px solid white;
+    padding: 5px;
+}

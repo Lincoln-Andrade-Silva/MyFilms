@@ -1,0 +1,48 @@
+<div class="container">
+    <form>
+        <mat-card>
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Nome" name="nome" [(ngModel)]="filme.nome">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Descrição" name="descricao" [(ngModel)]="filme.desc">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <label style="margin-bottom: 10px;">Categoria</label><br>
+                    <mat-select matNativeControl id="categoria" required name="categoria" [(value)]="filme.categoria">
+                        <mat-option *ngFor="let grupo of grupos" [value]="grupo.key">
+                            {{grupo.key}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="number" step="0.01" placeholder="Preço Compra" name="preco_compra"
+                        [(ngModel)]="filme.preco_fixo">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="number" step="0.01" placeholder="Preço Aluguel" name="preco_aluguel"
+                        [(ngModel)]="filme.preco_aluguel">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Data de Lançamento" name="data_lancamento" [(ngModel)]="filme.data_lancamento">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Diretor" name="diretor" [(ngModel)]="filme.diretor">
+                </mat-form-field>
+
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button (click)="atualizarFilme()" color="primary">Salvar</button>
+                <button mat-raised-button routerLink="/admin/filmes/listar">Cancelar</button>
+            </mat-card-actions>
+
+        </mat-card>
+    </form>
+</div>

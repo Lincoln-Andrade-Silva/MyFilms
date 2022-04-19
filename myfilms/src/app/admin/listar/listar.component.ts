@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Filme } from 'src/models/Filme';
+import { FilmesService } from 'src/services/filmes.service';
 
 @Component({
   selector: 'app-listar',
@@ -6,10 +9,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar.component.scss']
 })
 export class ListarComponent implements OnInit {
+  
+  filmes: Filme[];
+  grupos: any = [];
 
-  constructor() { }
+  colunas: string[] = ['Nome', 'Aluguel', 'Compra', 'Acao']
+
+  constructor(private service: FilmesService, private router: Router) {
+    this.filmes = [];
+  }
 
   ngOnInit(): void {
+    this.service.listar()
+      .subscribe(filmes => {
+        this.grupos = this.service.group_by(filmes, "categoria");
+      })
   }
+
+  excluir(filme: Filme) {
+    this.service.excluir(filme.id).subscribe(() =>{
+      this.load();
+    });
+  }
+
+  load() {
+    const HAS_RELOAD = 'hasReload';
+    const hasReload = sessionStorage.getItem(HAS_RELOAD);
+    if (!hasReload) {
+      sessionStorage.setItem(HAS_RELOAD, 'true');
+      location.reload();
+    }
+  }
+
 
 }

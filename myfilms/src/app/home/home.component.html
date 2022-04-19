@@ -5,19 +5,10 @@
             [data]="filmes" 
             [searchKeyword]="keyword" 
             placeholder="Search by name"
-            [itemTemplate]="itemTemplate" 
-            [notFoundTemplate]="notFoundTemplate"
             [(ngModel)]="search"
-        >
+            >
         </ng-autocomplete>
 
-        <ng-template #itemTemplate let-item>
-            <a [innerHTML]="item.nome"></a>
-        </ng-template>
-            
-        <ng-template #notFoundTemplate let-notFound>
-            <div [innerHTML]="notFound"></div>
-        </ng-template>
 
         <select placeholder="Category" [(ngModel)]="searchcat">
             <option>
@@ -37,22 +28,27 @@
 </div>
 
 <section id="catalogo-filmes">
-    <div class="card-filmes"
-        *ngFor="let filmes of filmes | filter: search: field.toLowerCase() | categoriaFilter: searchcat"
-        routerLink="/filme-details/{{filmes.id}}">
-        <div *ngIf="filmes.foto; else noImg">
-            <img mat-card-image src="{{filmes.foto}}" class="filme-foto">
-        </div>
-        <ng-template #noImg>
-            <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
-        </ng-template>
-        <div class="card-inner info">
-            <h3 class="filme-nome">
-                {{ filmes.nome }}
-            </h3>
-            <h6 class="filme-desc">
-                {{ truncate(filmes.desc) }}
-            </h6>
+    <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+        <div class="nome-grupo" *ngIf = "search === ''"> {{grupo.key}} </div>
+        <div class="grupo">
+            <div class="card-filmes"
+                *ngFor="let filme of grupo.values | filter: search: field.toLowerCase()"
+                routerLink="/filme-details/{{filme.id}}">
+                <div *ngIf="filme.foto; else noImg">
+                    <img mat-card-image src="{{filme.foto}}" class="filme-foto">
+                </div>
+                <ng-template #noImg>
+                    <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
+                </ng-template>
+                <div class="card-inner info">
+                    <h3 class="filme-nome">
+                        {{ filme.nome }}
+                    </h3>
+                    <h6 class="filme-desc">
+                        {{ truncate(filme.desc) }}
+                    </h6>
+                </div>
+            </div>
         </div>
     </div>
 </section>

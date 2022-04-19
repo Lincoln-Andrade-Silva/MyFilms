@@ -10,6 +10,7 @@ import { Filme } from 'src/models/Filme';
 export class HomeComponent implements OnInit {
 
   filmes: Filme[];
+  grupos: any = [];
   search: string = '';
   searchcat: string = 'Categoria';
   field: string = 'Nome';
@@ -44,9 +45,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.service.listar()
       .subscribe(filmes => {
-        this.filmes = filmes;
-        filmes =  this.group_by(filmes, "categoria")
-        console.log(filmes)
+        this.grupos =  this.group_by(filmes, "categoria");
       })
   }
 

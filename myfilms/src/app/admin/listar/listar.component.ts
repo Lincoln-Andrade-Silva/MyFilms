@@ -12,6 +12,10 @@ export class ListarComponent implements OnInit {
   
   filmes: Filme[];
   grupos: any = [];
+  search: string = '';
+  searchcat: string = 'Todos';
+  field: string = 'Nome';
+  keyword: string = 'nome'
 
   colunas: string[] = ['Nome', 'Aluguel', 'Compra', 'Acao']
 
@@ -41,5 +45,8 @@ export class ListarComponent implements OnInit {
     }
   }
 
+  setSearchcat(categoria: string){
+    this.searchcat = categoria;
+  }
 
 }

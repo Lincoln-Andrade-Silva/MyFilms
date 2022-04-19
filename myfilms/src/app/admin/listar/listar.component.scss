@@ -1,3 +1,16 @@
+.search { 
+	position: relative;
+	width: 100%;
+	margin-bottom: 5vh;
+	margin-top: 5vh;
+}
+
+.search-itens {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
 .container {
     margin-left: 10rem;
     margin-top: 2rem;
@@ -24,7 +37,7 @@ table {
     width: 90%;
     margin: 1%;
     color: rgba(255, 255, 255, 0.747);
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 i:hover {

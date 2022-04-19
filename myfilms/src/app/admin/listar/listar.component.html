@@ -1,8 +1,36 @@
 <div class="container">
-    <div *ngFor="let grupo of grupos">
-        <div class="nome-grupo"> {{grupo.key}} </div>
+    <div class="search">
+        <div class="search-itens">
+
+            <mdb-form-control class="form-white">
+                <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
+                    filme.searchKeyword="keyword" [(ngModel)]="search">
+                <label mdbLabel class="form-label custom-label" for="formWhite"><i class="fas fa-search"></i></label>
+            </mdb-form-control>
+
+            <div mdbDropdown class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle
+                    mdbRipple aria-expanded="false">
+                    {{searchcat}}
+                </button>
+                <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <li>
+                        <button mdbRipple class="dropdown-item" (click)="setSearchcat('Todos')">Todos</button>
+                    </li>
+                    <li *ngFor="let grupo of grupos">
+                        <button mdbRipple class="dropdown-item"
+                            (click)="setSearchcat(grupo.key.toLowerCase())">{{grupo.key}}</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
+    <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+        <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
         <div class="grupo">
-            <table mat-table [dataSource]="grupo.values">
+            <table mat-table [dataSource]="grupo.values | filter: search: field.toLowerCase()">
 
                 <ng-container matColumnDef="Nome">
                     <th mat-header-cell *matHeaderCellDef> Nome </th>

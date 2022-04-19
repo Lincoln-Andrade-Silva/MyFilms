@@ -35,6 +35,9 @@ import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { AdicionarComponent } from './admin/adicionar/adicionar.component';
+import { ListarComponent } from './admin/listar/listar.component';
+import { SideNavComponent } from './admin/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
     FilmeDetailsComponent,
     CarrinhoComponent,
     SearchPipe,
-    CategoriaFilterPipe
+    CategoriaFilterPipe,
+    AdicionarComponent,
+    ListarComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,

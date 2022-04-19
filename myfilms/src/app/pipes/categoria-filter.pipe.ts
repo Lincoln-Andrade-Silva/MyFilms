@@ -8,7 +8,7 @@ export class CategoriaFilterPipe implements PipeTransform {
   transform(grupos: any[], searchcat: string): any[] {
     if (!grupos) return [];
     if (!searchcat) return grupos;
-    if (searchcat==='Categoria') return grupos;
+    if (searchcat==='Todos') return grupos;
     searchcat = searchcat.toLowerCase();
     return grupos.filter(grupo => {
       if (grupo && grupo['key']) {

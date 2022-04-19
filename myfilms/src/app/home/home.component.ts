@@ -12,12 +12,16 @@ export class HomeComponent implements OnInit {
   filmes: Filme[];
   grupos: any = [];
   search: string = '';
-  searchcat: string = 'Categoria';
+  searchcat: string = 'Todos';
   field: string = 'Nome';
   keyword: string = 'nome'
 
   constructor(private service: FilmesService) {
     this.filmes = [];
+  }
+
+  setSearchcat(categoria: string){
+    this.searchcat = categoria;
   }
 
   group_by(lista: any[], coluna: string) {

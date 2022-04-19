@@ -33,6 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
 import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
+import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 
 @NgModule({
   declarations: [
@@ -72,6 +74,8 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     BrowserModule,
     BrowserAnimationsModule,
     AutocompleteLibModule,
+    MdbFormsModule,
+    MdbDropdownModule
   ],
   providers: [],
   bootstrap: [AppComponent]

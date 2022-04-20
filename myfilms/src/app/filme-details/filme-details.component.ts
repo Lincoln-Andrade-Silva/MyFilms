@@ -14,6 +14,9 @@ export class FilmeDetailsComponent implements OnInit {
 
   itensDoCarrinho: Observable<Filme[]> = new Observable<Filme[]>()
   filme: Filme = new Filme();
+  addSucess = false;
+  plural = false;
+  countItem = 0;
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id')
@@ -31,12 +34,17 @@ export class FilmeDetailsComponent implements OnInit {
     this.filme.preco = this.filme.preco_aluguel;
     this.filme.tipo = 'Aluguel';
     this.carrinhoService.incrementarUmItem(filme);
+    this.countItem++
   }
 
   adicionarAoCarrinhoCompra(filme: Filme) {
     this.filme.preco = this.filme.preco_fixo;
     this.filme.tipo = 'Compra';
     this.carrinhoService.incrementarUmItem(filme);
+    this.countItem++
+    if (this.countItem >= 2) {
+      this.plural = true
+    }
   }
 
 

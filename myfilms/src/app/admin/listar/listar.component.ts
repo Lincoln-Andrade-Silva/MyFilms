@@ -11,6 +11,7 @@ import { FilmesService } from 'src/services/filmes.service';
 export class ListarComponent implements OnInit {
   
   filmes: Filme[];
+  filme: any;
   grupos: any = [];
   search: string = '';
   searchcat: string = 'Todos';
@@ -28,21 +29,6 @@ export class ListarComponent implements OnInit {
       .subscribe(filmes => {
         this.grupos = this.service.group_by(filmes, "categoria");
       })
-  }
-
-  excluir(filme: Filme) {
-    this.service.excluir(filme.id).subscribe(() =>{
-      this.load();
-    });
-  }
-
-  load() {
-    const HAS_RELOAD = 'hasReload';
-    const hasReload = sessionStorage.getItem(HAS_RELOAD);
-    if (!hasReload) {
-      sessionStorage.setItem(HAS_RELOAD, 'true');
-      location.reload();
-    }
   }
 
   setSearchcat(categoria: string){

@@ -39,6 +39,7 @@ import { AdicionarComponent } from './admin/adicionar/adicionar.component';
 import { ListarComponent } from './admin/listar/listar.component';
 import { SideNavComponent } from './admin/side-nav/side-nav.component';
 import { EditarComponent } from './admin/editar/editar.component';
+import { ModalexcluirComponent } from './modalexcluir/modalexcluir.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { EditarComponent } from './admin/editar/editar.component';
     AdicionarComponent,
     ListarComponent,
     SideNavComponent,
-    EditarComponent
+    EditarComponent,
+    ModalexcluirComponent
   ],
   imports: [
     BrowserModule,

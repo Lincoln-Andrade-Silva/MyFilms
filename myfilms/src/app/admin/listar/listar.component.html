@@ -55,7 +55,7 @@
                                 routerLink="/admin/filme/editar/{{filme.id}}">
                             </i>
                         </a>
-                        <a><i class="fas fa-trash" style="color: crimson;" (click)="excluir(filme)"></i></a>
+                        <a><i class="fas fa-trash" style="color: crimson;" (click)="modalexcluir.openPopupFilm(filme)"></i></a>
                     </td>
                 </ng-container>
 
@@ -65,3 +65,6 @@
         </div>
     </div>
 </div>
+
+<app-modalexcluir #modalexcluir>
+</app-modalexcluir>

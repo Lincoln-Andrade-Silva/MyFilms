@@ -1,3 +1,6 @@
+<p *ngIf="" class="note note-success custom-note">
+    <strong><i class="fas fa-check"></i> Item adicionado ao carrinho </strong>
+</p>
 <section id="filme-details">
     <div class="filme-card">
 
@@ -12,7 +15,7 @@
 
 
             <div class="filme-botoes">
-                <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button" routerLink="/carrinho"
+                <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button"
                     (click)="adicionarAoCarrinhoCompra(filme)">
                     <span class="filme-preco">
                         ${{ filme.preco_fixo }}
@@ -23,7 +26,7 @@
                         Comprar
                     </span>
                 </a>
-                <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button" routerLink="/carrinho"
+                <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button"
                     (click)="adicionarAoCarrinhoAluguel(filme)">
                     <span class="filme-preco">
                         ${{ filme.preco_aluguel }}
@@ -53,8 +56,5 @@
             </h6>
 
         </div>
-        <p class="note note-success custom-note">
-            <strong><i class="fas fa-check"></i> Item adicionado ao carrinho </strong>
-        </p>
     </div>
 </section>

@@ -11,7 +11,7 @@ mat-card {
     flex-direction: column;
     padding: 40px;
     color: white;
-    border: 1px solid white;
+    //border: 1px solid white;
     width: 90%;
 }
 
@@ -22,13 +22,9 @@ mat-form-field {
 }
 
 input {
-    margin-top: 40px;
-    border: 1px solid white;
+    margin-top: 2px;
+    border-bottom: 1px solid white;
     padding: 5px;
-}
-
-label {
-    margin-bottom: 2rem;
 }
 
 mat-option {
@@ -39,4 +35,86 @@ mat-select {
     width: 10vw;
     border: 1px solid white;
     padding: 5px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    //margin-top: 10px;
+    width: 100%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $primary-darker;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    padding: 7px;
+    background: transparent;
+    transition: border-color 1s;
+  }
+
+  .form__dropdown {
+    font-family: inherit;
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid $primary-darker;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    padding: 7px;
+    background: transparent;
+    transition: border-color 1s;
+  }
+
+  .form__dropdown:focus {
+    border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+    transition: 0.2s ;
+    border-image-slice: 1;
+  }
+
+  .form__label{
+      font-size: 12px;
+      margin-top: 2px;
+      padding-left: 7px;
+      color: $text-color;
+  }
+  
+  
+  .form__field:focus {
+    border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+    font-size: 20px;
+    transition: 0.2s ;
+    border-image-slice: 1;
+  }
+
+.form__textarea{
+    background-color: transparent;
+    border: 2px solid $primary-darker;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding: 7px;
+
+    &:focus {
+        border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+        transition: 0.2s ;
+        border-image-slice: 1;
+    }
+}
+
+mdb-form-control{
+    margin-top: 50px;
+}
+
+.mat-card-actions{
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+.editar-button{
+    margin-left: 10px;
 }

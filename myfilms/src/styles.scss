@@ -16,12 +16,10 @@ $text-color: #C5C6C7;
 
 body{
     background-color: $secondary-color !important;
+    overflow-x: hidden;
 }
 *{
     font-family: 'Montserrat', sans-serif;
-}
-.container{
-    max-width: 100vh !important;
 }
 
 .ripples {

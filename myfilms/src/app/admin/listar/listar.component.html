@@ -1,67 +1,71 @@
-<div class="container">
-    <div class="search">
-        <div class="search-itens">
+<section id="listar-filmes">
+    <div class="container">
+        <div class="search">
+            <div class="search-itens">
 
-            <mdb-form-control class="form-white">
-                <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
-                    filme.searchKeyword="keyword" [(ngModel)]="search">
-                <label mdbLabel class="form-label custom-label" for="formWhite"><i class="fas fa-search"></i></label>
-            </mdb-form-control>
+                <mdb-form-control class="form-white">
+                    <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
+                        filme.searchKeyword="keyword" [(ngModel)]="search">
+                    <label mdbLabel class="form-label custom-label" for="formWhite"><i class="fas fa-search"></i></label>
+                </mdb-form-control>
 
-            <div mdbDropdown class="dropdown">
-                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle
-                    mdbRipple aria-expanded="false">
-                    {{searchcat}}
-                </button>
-                <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                    <li>
-                        <button mdbRipple class="dropdown-item" (click)="setSearchcat('Todos')">Todos</button>
-                    </li>
-                    <li *ngFor="let grupo of grupos">
-                        <button mdbRipple class="dropdown-item"
-                            (click)="setSearchcat(grupo.key.toLowerCase())">{{grupo.key}}</button>
-                    </li>
-                </ul>
+                <div mdbDropdown class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle
+                        mdbRipple aria-expanded="false">
+                        {{searchcat}}
+                    </button>
+                    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                            <button mdbRipple class="dropdown-item" (click)="setSearchcat('Todos')">Todos</button>
+                        </li>
+                        <li *ngFor="let grupo of grupos">
+                            <button mdbRipple class="dropdown-item"
+                                (click)="setSearchcat(grupo.key.toLowerCase())">{{grupo.key}}</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
+        <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+            <div class="nome-head">
+                <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
+            </div>
+            <div class="grupo">
+                <table mat-table [dataSource]="grupo.values | filter: search: field.toLowerCase()">
+
+                    <ng-container matColumnDef="Nome">
+                        <th mat-header-cell *matHeaderCellDef> Nome </th>
+                        <td mat-cell *matCellDef="let filmes"> {{filmes.nome}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Aluguel">
+                        <th mat-header-cell *matHeaderCellDef> Aluguel </th>
+                        <td mat-cell *matCellDef="let filme"> R${{filme.preco_aluguel}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Compra">
+                        <th mat-header-cell *matHeaderCellDef> Compra </th>
+                        <td mat-cell *matCellDef="let filme"> R${{filme.preco_fixo}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Acao">
+                        <th mat-header-cell *matHeaderCellDef></th>
+                        <td mat-cell *matCellDef="let filme">
+                            <button mdbRipple type="button" class="btn btn-outline-warning btn-editar" routerLink="/admin/filme/editar/{{filme.id}}" data-mdb-ripple-color="dark">
+                                <i class="fas fa-pencil"></i>
+                                </button>
+                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark">
+                                <i class="fas fa-trash"(click)="excluir(filme)"></i>
+                            </button>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="colunas"></tr>
+                    <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
+                </table>
             </div>
         </div>
     </div>
-
-    <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
-    <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
-        <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
-        <div class="grupo">
-            <table mat-table [dataSource]="grupo.values | filter: search: field.toLowerCase()">
-
-                <ng-container matColumnDef="Nome">
-                    <th mat-header-cell *matHeaderCellDef> Nome </th>
-                    <td mat-cell *matCellDef="let filmes"> {{filmes.nome}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Aluguel">
-                    <th mat-header-cell *matHeaderCellDef> Aluguel </th>
-                    <td mat-cell *matCellDef="let filme"> R${{filme.preco_aluguel}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Compra">
-                    <th mat-header-cell *matHeaderCellDef> Compra </th>
-                    <td mat-cell *matCellDef="let filme"> R${{filme.preco_fixo}} </td>
-                </ng-container>
-
-                <ng-container matColumnDef="Acao">
-                    <th mat-header-cell *matHeaderCellDef></th>
-                    <td mat-cell *matCellDef="let filme">
-                        <a>
-                            <i class="fas fa-pencil" style="color:greenyellow; padding-right: 30px;"
-                                routerLink="/admin/filme/editar/{{filme.id}}">
-                            </i>
-                        </a>
-                        <a><i class="fas fa-trash" style="color: crimson;" (click)="excluir(filme)"></i></a>
-                    </td>
-                </ng-container>
-
-                <tr mat-header-row *matHeaderRowDef="colunas"></tr>
-                <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
-            </table>
-        </div>
-    </div>
-</div>
+</section>

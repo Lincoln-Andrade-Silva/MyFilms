@@ -1,17 +1,6 @@
 {
   "filmes": [
     {
-      "id": 0,
-      "nome": "Projeto X",
-      "desc": "hehe boy",
-      "foto": "/assets/images/Projeto-X.jpg",
-      "categoria": "Comédia",
-      "preco_aluguel": 14.99,
-      "preco_fixo": 24.99,
-      "data_lancamento": "19 de dezembro de 2011",
-      "diretor": "Toni garridos"
-    },
-    {
       "id": 1,
       "nome": "A Hora do Pesadelo",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",

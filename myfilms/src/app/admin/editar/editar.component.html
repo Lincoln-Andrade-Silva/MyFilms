@@ -1,6 +1,7 @@
 <div class="container">
     <form>
         <mat-card>
+            <h4 style="margin-bottom: 25px;">Editar Filme</h4>
             <mat-card-content>
                 <mat-form-field class="form__group field">
                     <input matInput class="form__field" name="nome" id="nome" [(ngModel)]="filme.nome"/>
@@ -44,8 +45,8 @@
 
             </mat-card-content>
             <mat-card-actions>
-                <button mdbRipple (click)="atualizarFilme()" class="btn btn-primary editar-button">Salvar</button>
-                <button mdbRipple routerLink="/admin/filmes/listar" class="btn btn-outline-primary">Cancelar</button>
+                <button mdbRipple (click)="atualizarFilme()" class="btn btn-success editar-button"><b>Salvar</b></button>
+                <button mdbRipple routerLink="/admin/filmes/listar" class="btn btn-outline-danger">Cancelar</button>
             </mat-card-actions>
 
         </mat-card>

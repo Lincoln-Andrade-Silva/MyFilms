@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Filme } from 'src/models/Filme';
 import { FilmesService } from 'src/services/filmes.service';
 
@@ -11,7 +12,7 @@ export class ModalexcluirComponent implements OnInit {
 
   filme: any;
 
-  constructor(private service: FilmesService) { }
+  constructor(private service: FilmesService, private router: Router,) { }
 
   ngOnInit(): void {
   }
@@ -40,6 +41,7 @@ export class ModalexcluirComponent implements OnInit {
 
   excluir() {
     this.service.excluir(this.filme.id).subscribe(() => {
+      this.router.navigate(['/admin/filmes/listar']);
       this.load();
     });
   }

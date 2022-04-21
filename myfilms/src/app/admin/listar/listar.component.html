@@ -56,8 +56,8 @@
                             <button mdbRipple type="button" class="btn btn-outline-warning btn-editar" routerLink="/admin/filme/editar/{{filme.id}}" data-mdb-ripple-color="dark">
                                 <i class="fas fa-pencil"></i>
                                 </button>
-                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark">
-                                <i class="fas fa-trash"(click)="excluir(filme)"></i>
+                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark" (click)="modalexcluir.openPopupFilm(filme)">
+                                <i class="fas fa-trash"></i>
                             </button>
                         </td>
                     </ng-container>

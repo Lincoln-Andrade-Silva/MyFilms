@@ -1,3 +1,20 @@
+@import './../../../styles';
+
+section#listar-filmes{
+
+.container{
+    margin: 0 10%;
+    max-width: 80vw;
+}
+
+.nome-head {
+    background-color: $primary-darker;
+    border: 1px solid $primary-darker;
+    border-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
 .search { 
 	position: relative;
 	width: 100%;
@@ -11,14 +28,6 @@
 	align-content: center;
 }
 
-.container {
-    margin-left: 10rem;
-    margin-top: 2rem;
-    width: 100%;
-    height: auto;
-    margin-bottom: 90px;
-}
-
 .grupo {
     display: flex;
     flex-direction: row;
@@ -26,20 +35,41 @@
 }
 
 .nome-grupo {
-    display: flex;
-    flex-direction: column;
     color: white;
-    margin-left: 2vw;
+    padding: 10px 20px;
     font-size: 25px;
+    font-weight: bold;
 }
 
+.btn-editar, .btn-deletar{
+    margin-left: 20px;
+}
+
+.btn-editar:hover{
+    border-color: #976a11;
+    color: #976a11;
+}
+.btn-deletar:hover{
+    border-color: #992237;
+    color: #992237;
+}
+
+
+.cdk-column-Acao{
+    width: min-content;
+}
+
+
 table {
-    width: 90%;
-    margin: 1%;
-    color: rgba(255, 255, 255, 0.747);
+    width: 100%;
+    color: white;
     margin-bottom: 3rem;
+    border: 2px solid $secondary-light;
+    border-top: none;
 }
 
 i:hover {
     cursor: pointer;
+}
+
 }

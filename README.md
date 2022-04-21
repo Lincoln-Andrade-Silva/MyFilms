@@ -8,4 +8,4 @@
 
 # NPM
 
-- npm i angular-ng-autocomplete
+- npm install bootstrap

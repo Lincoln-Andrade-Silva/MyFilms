@@ -1,5 +1,11 @@
-<p *ngIf="" class="note note-success custom-note">
-    <strong><i class="fas fa-check"></i> Item adicionado ao carrinho </strong>
+
+<p class="note note-success custom-note" *ngIf="addSucess">
+    <strong style="color: dimgray;">
+        <i class="fas fa-check" style="margin-right: 10px;"></i>
+        <a *ngIf="plural">{{countItem}} Itens adicionados ao carrinho</a>
+        <a *ngIf="!plural">Item adicionado ao carrinho</a>
+        <i class="fas fa-close" id="fecharSucess" (click)="addSucess = false;"></i>
+    </strong>
 </p>
 <section id="filme-details">
     <div class="filme-card">
@@ -16,7 +22,7 @@
 
             <div class="filme-botoes">
                 <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button"
-                    (click)="adicionarAoCarrinhoCompra(filme)">
+                    (click)="adicionarAoCarrinhoCompra(filme)" (click)="addSucess = true;">
                     <span class="filme-preco">
                         ${{ filme.preco_fixo }}
                     </span>
@@ -27,7 +33,7 @@
                     </span>
                 </a>
                 <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button"
-                    (click)="adicionarAoCarrinhoAluguel(filme)">
+                    (click)="adicionarAoCarrinhoAluguel(filme)" (click)="addSucess = true;">
                     <span class="filme-preco">
                         ${{ filme.preco_aluguel }}
                     </span>

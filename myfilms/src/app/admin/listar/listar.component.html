@@ -56,7 +56,7 @@
                             <button mdbRipple type="button" class="btn btn-outline-warning btn-editar" routerLink="/admin/filme/editar/{{filme.id}}" data-mdb-ripple-color="dark">
                                 <i class="fas fa-pencil"></i>
                                 </button>
-                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark" (click)="modalexcluir.openPopupFilm(filme)">
+                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark" (click)="excluir(filme.id)">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
@@ -69,8 +69,3 @@
         </div>
     </div>
 </section>
-
-
-
-<app-modalexcluir #modalexcluir>
-</app-modalexcluir>

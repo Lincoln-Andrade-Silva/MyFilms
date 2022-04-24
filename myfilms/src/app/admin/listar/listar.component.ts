@@ -9,7 +9,7 @@ import { FilmesService } from 'src/services/filmes.service';
   styleUrls: ['./listar.component.scss']
 })
 export class ListarComponent implements OnInit {
-  
+
   filmes: Filme[];
   filme: any;
   grupos: any = [];
@@ -20,19 +20,29 @@ export class ListarComponent implements OnInit {
 
   colunas: string[] = ['Nome', 'Aluguel', 'Compra', 'Acao']
 
-  constructor(private service: FilmesService, private router: Router) {
+  constructor(private service: FilmesService) {
     this.filmes = [];
   }
 
   ngOnInit(): void {
+    this.getList();
+  }
+
+  getList() {
     this.service.listar()
       .subscribe(filmes => {
         this.grupos = this.service.group_by(filmes, "categoria");
       })
   }
 
-  setSearchcat(categoria: string){
+  setSearchcat(categoria: string) {
     this.searchcat = categoria;
+  }
+
+  excluir(id: number) {
+    this.service.excluir(id).subscribe(() => {
+      this.getList();
+    });
   }
 
 }

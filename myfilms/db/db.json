@@ -109,17 +109,6 @@
       "preco_fixo": 19.99,
       "data_lancamento": "20 de dezembro de 2011",
       "diretor": "Toni boy"
-    },
-    {
-      "id": 11,
-      "nome": "Teste",
-      "desc": "teste",
-      "foto": "",
-      "categoria": "Comédia",
-      "preco_aluguel": "10.99",
-      "preco_fixo": "21.99",
-      "data_lancamento": "20 de dezembro de 2011",
-      "diretor": "meu pai"
     }
   ]
 }

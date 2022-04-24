@@ -5,7 +5,3 @@
 - ng g s "service"
 
 - ng g p "pipe"
-
-# NPM
-
-- npm install bootstrap

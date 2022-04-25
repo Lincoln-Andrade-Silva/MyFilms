@@ -16,7 +16,7 @@ mat-card {
 mat-form-field {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 input {
@@ -105,7 +105,7 @@ mat-select {
 }
 
 mdb-form-control{
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 .mat-card-actions{
@@ -115,4 +115,17 @@ mdb-form-control{
 }
 .editar-button{
     margin-left: 10px;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adicionar-coluna {
+  width: 40%;
+}
+
+.mat-card > h4 {
+  margin-bottom: 0 !important;
 }

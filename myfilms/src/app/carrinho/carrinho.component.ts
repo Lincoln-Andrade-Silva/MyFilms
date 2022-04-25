@@ -38,6 +38,10 @@ export class CarrinhoComponent implements OnInit {
     this.carrinhoService.atualizarItem(filme);
   }
 
+  limpar(){
+    this.carrinhoService.limpar();
+  }
+
   formatar(valor: BehaviorSubject<number>) {
     const conversor = new Intl.NumberFormat('pt-BR', {
       style: 'currency',

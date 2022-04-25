@@ -1,12 +1,18 @@
 <section id="listar-filmes">
     <div class="container">
         <div class="search">
+
+            <div routerLink="/admin/filme/adicionar" mdbRipple style="float: left; left: 0;"
+                class="nav-link btn btn-primary btn-raised login-button"><a><i class="fas fa-plus"></i>
+                    Adicionar</a></div>
+
             <div class="search-itens">
 
-                <mdb-form-control class="form-white" style="margin-right: 10px;">
+                <mdb-form-control class="form-white" style="margin-right: 1em;">
                     <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
                         filme.searchKeyword="keyword" [(ngModel)]="search" style="width: 25vw;">
-                    <label mdbLabel class="form-label custom-label" for="formWhite"><i class="fas fa-search"></i></label>
+                    <label mdbLabel class="form-label custom-label" for="formWhite"><i
+                            class="fas fa-search"></i></label>
                 </mdb-form-control>
 
                 <div mdbDropdown class="dropdown">
@@ -36,7 +42,7 @@
                 <table mat-table [dataSource]="grupo.values | filter: search: field.toLowerCase()">
 
                     <ng-container matColumnDef="Nome">
-                        <th mat-header-cell *matHeaderCellDef style="width: 45vw;"> Nome </th>
+                        <th mat-header-cell *matHeaderCellDef> Nome </th>
                         <td mat-cell *matCellDef="let filmes"> {{filmes.nome}} </td>
                     </ng-container>
 
@@ -53,10 +59,12 @@
                     <ng-container matColumnDef="Acao">
                         <th mat-header-cell *matHeaderCellDef></th>
                         <td mat-cell *matCellDef="let filme">
-                            <button mdbRipple type="button" class="btn btn-outline-warning btn-editar" routerLink="/admin/filme/editar/{{filme.id}}" data-mdb-ripple-color="dark">
+                            <button mdbRipple type="button" class="btn btn-outline-warning btn-editar"
+                                routerLink="/admin/filme/editar/{{filme.id}}" data-mdb-ripple-color="dark">
                                 <i class="fas fa-pencil"></i>
-                                </button>
-                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar" data-mdb-ripple-color="dark" (click)="excluir(filme.id)">
+                            </button>
+                            <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar"
+                                data-mdb-ripple-color="dark" (click)="excluir(filme.id)">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>

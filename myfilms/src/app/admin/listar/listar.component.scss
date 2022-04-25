@@ -1,75 +1,81 @@
 @import './../../../styles';
 
-section#listar-filmes{
+section#listar-filmes {
 
-.container{
-    margin: 0 10%;
-    max-width: 80vw;
-}
+    .container {
+        margin: 0 10%;
+        max-width: 80vw;
+    }
 
-.nome-head {
-    background-color: $primary-darker;
-    border: 1px solid $primary-darker;
-    border-radius: 5px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
-}
+    .nome-head {
+        background-color: $primary-darker;
+        border: 1px solid $primary-darker;
+        border-radius: 5px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
 
-.search { 
-	position: relative;
-	width: 100%;
-	margin-bottom: 5vh;
-	margin-top: 5vh;
-}
+    .search {
+        position: relative;
+        width: 100%;
+        margin-bottom: 5vh;
+        margin-top: 5vh;
+    }
 
-.search-itens {
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}
+    .search-itens {
+        display: flex;
+        justify-content: end;
+        align-content: flex-end;
+    }
 
-.grupo {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-}
+    .grupo {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
 
-.nome-grupo {
-    color: white;
-    padding: 10px 20px;
-    font-size: 25px;
-    font-weight: bold;
-}
+    .nome-grupo {
+        color: white;
+        padding: 10px 20px;
+        font-size: 25px;
+        font-weight: bold;
+    }
 
-.btn-editar, .btn-deletar{
-    margin-left: 20px;
-}
+    .btn-editar,
+    .btn-deletar {
+        margin-left: 20px;
+    }
 
-.btn-editar:hover{
-    border-color: #976a11;
-    color: #976a11;
-}
-.btn-deletar:hover{
-    border-color: #992237;
-    color: #992237;
-}
+    .btn-editar:hover {
+        border-color: #976a11;
+        color: #976a11;
+    }
 
-
-.cdk-column-Acao{
-    width: min-content;
-}
+    .btn-deletar:hover {
+        border-color: #992237;
+        color: #992237;
+    }
 
 
-table {
-    width: 100%;
-    color: white;
-    margin-bottom: 3rem;
-    border: 2px solid $secondary-light;
-    border-top: none;
-}
+    .cdk-column-Acao {
+        width: min-content;
+    }
 
-i:hover {
-    cursor: pointer;
-}
+
+    table {
+        width: 100%;
+        color: white;
+        margin-bottom: 3rem;
+        border: 2px solid $secondary-light;
+        border-top: none;
+    }
+
+    i:hover {
+        cursor: pointer;
+    }
+
+    th {
+        width: 20vw;
+    }
 
 }

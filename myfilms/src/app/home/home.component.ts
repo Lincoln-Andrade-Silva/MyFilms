@@ -20,20 +20,24 @@ export class HomeComponent implements OnInit {
     this.filmes = [];
   }
 
-  setSearchcat(categoria: string){
+  setSearchcat(categoria: string) {
     this.searchcat = categoria;
   }
-  
+
   ngOnInit(): void {
+    this.list()
+  }
+
+  list() {
     this.service.listar()
       .subscribe(filmes => {
-        this.grupos =  this.service.group_by(filmes, "categoria");
+        this.grupos = this.service.group_by(filmes, "categoria");
       })
   }
 
   truncate(str: string | undefined) {
     if (str) {
-      return str.length > 20 ? str.substring(0, 200) + '...' : str;
+      return str.length > 20 ? str.substring(0, 180) + '...' : str;
     } else { return str }
   }
 }

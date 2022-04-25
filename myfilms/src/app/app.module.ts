@@ -37,7 +37,6 @@ import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { AdicionarComponent } from './admin/adicionar/adicionar.component';
 import { ListarComponent } from './admin/listar/listar.component';
-import { SideNavComponent } from './admin/side-nav/side-nav.component';
 import { EditarComponent } from './admin/editar/editar.component';
 
 @NgModule({
@@ -55,7 +54,6 @@ import { EditarComponent } from './admin/editar/editar.component';
     CategoriaFilterPipe,
     AdicionarComponent,
     ListarComponent,
-    SideNavComponent,
     EditarComponent,
   ],
   imports: [

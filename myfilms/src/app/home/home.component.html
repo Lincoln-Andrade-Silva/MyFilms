@@ -27,7 +27,7 @@
 
 <section id="catalogo-filmes">
     <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
-    <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+    <div class="filtred-films" *ngFor="let grupo of grupos | categoriaFilter: searchcat">
         <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
         <div class="grupo">
             <div class="card-filmes" *ngFor="let filme of grupo.values | filter: search: field.toLowerCase()"

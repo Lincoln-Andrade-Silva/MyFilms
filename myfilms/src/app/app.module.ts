@@ -9,7 +9,6 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
-import { SobreComponent } from './sobre/sobre.component';
 import { NavComponent } from './nav/nav.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { HttpClientModule } from '@angular/common/http';
@@ -46,7 +45,6 @@ import { EditarComponent } from './admin/editar/editar.component';
     FooterComponent,
     HomeComponent,
     AdminComponent,
-    SobreComponent,
     NavComponent,
     FilmeDetailsComponent,
     CarrinhoComponent,

@@ -2,12 +2,15 @@
     <div class="container">
         <div class="search">
 
+            <!-- Adicionar Filme -->
             <div routerLink="/admin/filme/adicionar" mdbRipple style="float: left; left: 0;"
                 class="nav-link btn btn-primary btn-raised login-button"><a><i class="fas fa-plus"></i>
                     Adicionar</a></div>
 
+            <!-- Buscar Filmes -->
             <div class="search-itens">
 
+                <!-- Search Bar -->
                 <mdb-form-control class="form-white" style="margin-right: 1em;">
                     <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
                         filme.searchKeyword="keyword" [(ngModel)]="search" style="width: 25vw;">
@@ -15,6 +18,7 @@
                             class="fas fa-search"></i></label>
                 </mdb-form-control>
 
+                <!-- Dropdown de Categorias -->
                 <div mdbDropdown class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle
                         mdbRipple aria-expanded="false">
@@ -33,12 +37,19 @@
             </div>
         </div>
 
+        <!-- Filtro de Pesquisa Searchbar -->
         <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
         <div *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+
+            <!-- Exibir Categorias -->
             <div class="nome-head">
-                <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
+                <div class="nome-grupo"> {{grupo.key}} </div>
             </div>
+
+            <!-- Filmes Tabulados -->
             <div class="grupo">
+
+                <!-- Filtro para Dropdown de Categorias -->
                 <table mat-table [dataSource]="grupo.values | filter: search: field.toLowerCase()">
 
                     <ng-container matColumnDef="Nome">
@@ -64,7 +75,7 @@
                                 <i class="fas fa-pencil"></i>
                             </button>
                             <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar"
-                                data-mdb-ripple-color="dark" (click)="excluir(filme.id)">
+                                data-mdb-ripple-color="dark" (click)="deleteConfirm = true; saveId(filme.id)">
                                 <i class="fas fa-trash"></i>
                             </button>
                         </td>
@@ -73,6 +84,29 @@
                     <tr mat-header-row *matHeaderRowDef="colunas"></tr>
                     <tr mat-row *matRowDef="let row; columns: colunas;"></tr>
                 </table>
+            </div>
+        </div>
+
+        <!-- Modal de Deleção -->
+        <div class="delete-modal" *ngIf="deleteConfirm">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"><b>Deletar Filme</b></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                            (click)="deleteConfirm=false" style="color: white;">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Tem certeza que deseja deletar o filme selecionado ?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" (click)="deleteConfirm = false">Close</button>
+                        <button type="button" class="btn btn-danger"
+                            (click)="excluir(filmeId); deleteConfirm = false"><b>Delete</b></button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

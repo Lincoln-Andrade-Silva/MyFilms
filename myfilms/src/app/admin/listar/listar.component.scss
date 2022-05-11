@@ -78,4 +78,25 @@ section#listar-filmes {
         width: 20vw;
     }
 
+    .delete-modal {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        padding-top: 20vh;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.708);
+    }
+
+    .modal-content {
+        background-color: $primary-darker;
+        color: white;
+    }
+
+    .modal-body{
+        padding-top: 37px;
+        padding-bottom:25px;
+    }
+
 }

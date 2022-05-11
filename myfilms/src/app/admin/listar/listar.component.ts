@@ -16,7 +16,9 @@ export class ListarComponent implements OnInit {
   search: string = '';
   searchcat: string = 'Todos';
   field: string = 'Nome';
-  keyword: string = 'nome'
+  keyword: string = 'nome';
+  deleteConfirm = false;
+  filmeId = 0;
 
   colunas: string[] = ['Nome', 'Aluguel', 'Compra', 'Acao']
 
@@ -43,6 +45,11 @@ export class ListarComponent implements OnInit {
     this.service.excluir(id).subscribe(() => {
       this.getList();
     });
+  }
+
+  saveId(number: any){
+    this.filmeId = number
+    return this.filmeId;
   }
 
 }

@@ -1,38 +1,51 @@
+<!-- Formulário de Adição -->
 <div class="container">
     <form>
         <mat-card>
+
+            <!-- Titulo -->
             <h4 style="margin-bottom: 25px;">Adicionar Filme</h4>
             <mat-card-content>
 
+                <!-- Coluna a Esquerda -->
                 <div class="adicionar-coluna">
+
+                    <!-- Nome do Filme -->
                     <mat-form-field class="form__group field">
                         <input matInput class="form__field" name="nome" id="nome" [(ngModel)]="filme.nome" />
                         <label for="nome" class="form__label">Nome</label>
                     </mat-form-field>
 
+                    <!-- Preço de Aluguel -->
                     <mat-form-field class="form__group field">
                         <input matInput class="form__field" name="aluguel" id="alugel"
                             [(ngModel)]="filme.preco_aluguel" />
                         <label for="alugel" class="form__label">Preço Alugel</label>
                     </mat-form-field>
 
+                    <!-- Data de Lançamento -->
                     <mat-form-field class="form__group field">
                         <input matInput class="form__field" name="data" id="data" [(ngModel)]="filme.data_lancamento" />
                         <label for="data" class="form__label">Data de Lançamento</label>
                     </mat-form-field>
 
+                    <!-- Nome do Diretor -->
                     <mat-form-field class="form__group field">
                         <input matInput class="form__field" name="diretor" id="diretor" [(ngModel)]="filme.diretor" />
                         <label for="diretor" class="form__label">Diretor</label>
                     </mat-form-field>
                 </div>
 
+                <!-- Coluna a Direita -->
                 <div class="adicionar-coluna">
+
+                    <!-- Preço de Compra -->
                     <mat-form-field class="form__group field">
                         <input matInput class="form__field" name="compra" id="compra" [(ngModel)]="filme.preco_fixo" />
                         <label for="compra" class="form__label">Preço Compra</label>
                     </mat-form-field>
 
+                    <!-- Categoria do Filme -->
                     <mat-form-field class="form__group field">
                         <label style="margin-bottom: 10px;" class="form__label">Categoria</label><br>
                         <mat-select matNativeControl id="categoria" required name="categoria" class="form__dropdown"
@@ -43,21 +56,25 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-
             </mat-card-content>
 
+            <!-- Descrição do Filme -->
             <mdb-form-control class="form__desc">
                 <textarea mdbInput class="form__textarea" name="descricao" id="descricao"
                     [(ngModel)]="filme.desc"></textarea>
                 <label mdbLabel for="descricao" class="form__label">Descrição</label>
             </mdb-form-control>
 
+            <!-- Botões -->
             <mat-card-actions>
+
+                <!-- Botão de Salvar -->
                 <button mdbRipple (click)="adicionarFilme()"
                     class="btn btn-success editar-button"><b>Salvar</b></button>
+
+                <!-- Botão de Cancelar -->
                 <button mdbRipple routerLink="/admin/filmes/listar" class="btn btn-outline-danger">Cancelar</button>
             </mat-card-actions>
-
         </mat-card>
     </form>
 </div>

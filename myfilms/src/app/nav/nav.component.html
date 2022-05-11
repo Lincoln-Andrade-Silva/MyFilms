@@ -1,31 +1,41 @@
+<!-- Nav Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
+
+        <!-- Logo MyFilms -->
         <a class="navbar-brand" [routerLink]="['/home']"><img src="/assets/images/pipoca.png" style="height: 2.5em;">
             MyFilms</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+
+        <!-- Nav Itens -->
         <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- Esquerda da Nav Bar -->
             <ul class="navbar-nav left-nav">
+
+                <!-- Home -->
                 <li class="nav-item">
                     <a mdbRipple class="nav-link" [routerLink]="['/']">Home</a>
                 </li>
 
+                <!-- Admin -->
                 <li mdbRipple class="nav-item">
                     <a class="nav-link" [routerLink]="['/admin/filmes/listar']" routerLinkActive="active">Admin</a>
                 </li>
             </ul>
+
+            <!-- Direita da Nav Bar -->
             <ul class="navbar-nav right-nav">
+
+                <!-- Carrinho -->
                 <li mdbRipple class="nav-item">
                     <a class="nav-link" [routerLink]="['/carrinho']" routerLinkActive="active"><i
                             class="fas fa-box-open"></i> Carrinho</a>
                 </li>
-                <li class="nav-item">
 
+                <!-- Login -->
+                <li class="nav-item">
                     <a mdbRipple class="nav-link btn btn-primary btn-raised login-button" [routerLink]="['/']"><i
                             class="far fa-user"></i> Login</a>
-
                 </li>
             </ul>
         </div>

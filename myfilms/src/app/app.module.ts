@@ -5,7 +5,6 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
@@ -31,7 +30,6 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SearchPipe } from './pipes/search.pipe';
 import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
-import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { AdicionarComponent } from './admin/adicionar/adicionar.component';
@@ -41,7 +39,6 @@ import { EditarComponent } from './admin/editar/editar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     HomeComponent,
     AdminComponent,
@@ -77,7 +74,6 @@ import { EditarComponent } from './admin/editar/editar.component';
     ReactiveFormsModule,
     BrowserModule,
     BrowserAnimationsModule,
-    AutocompleteLibModule,
     MdbFormsModule,
     MdbDropdownModule,
   ],

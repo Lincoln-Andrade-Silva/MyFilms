@@ -1,12 +1,15 @@
+<!-- Home -->
 <div class="search">
     <div class="search-itens">
 
+        <!-- Search Bar -->
         <mdb-form-control class="form-white">
             <input mdbInput type="text" class="form-control custom-input" id="formWhite" filme.data="filmes"
                 filme.searchKeyword="keyword" [(ngModel)]="search">
             <label mdbLabel class="form-label custom-label" for="formWhite"><i class="fas fa-search"></i></label>
         </mdb-form-control>
 
+        <!-- Dropdown de Categoria -->
         <div mdbDropdown class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle mdbRipple
                 aria-expanded="false">
@@ -25,23 +28,40 @@
     </div>
 </div>
 
+<!-- Catalogo de Filmes -->
 <section id="catalogo-filmes">
+
+    <!-- Resultado da Pesquisa -->
     <div class="nome-grupo" *ngIf="search != ''"> Resultado da pesquisa: {{search}}</div>
+
+    <!-- Filtro de Categoria e Looping -->
     <div class="filtred-films" *ngFor="let grupo of grupos | categoriaFilter: searchcat">
+
+        <!-- Nome da Categoria -->
         <div class="nome-grupo" *ngIf="search === ''"> {{grupo.key}} </div>
         <div class="grupo">
+
+            <!-- Filtro por Nome do Filme e Looping de Filmes -->
             <div class="card-filmes" *ngFor="let filme of grupo.values | filter: search: field.toLowerCase()"
                 routerLink="/filme-details/{{filme.id}}">
+
+                <!-- Imagem do Filme -->
                 <div *ngIf="filme.foto; else noImg">
                     <img mat-card-image src="{{filme.foto}}" class="filme-foto">
                 </div>
+
+                <!-- Filme sem Imagem -->
                 <ng-template #noImg>
                     <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
                 </ng-template>
+
+                <!-- Nome do Filme -->
                 <div class="card-inner info">
                     <h3 class="filme-nome">
                         {{ filme.nome }}
                     </h3>
+
+                    <!-- Descrição do Filme -->
                     <h6 class="filme-desc">
                         {{ truncate(filme.desc) }}
                     </h6>

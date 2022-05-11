@@ -1,4 +1,4 @@
-
+<!-- Pop-up de Adição ao Carrinho -->
 <p class="note note-success custom-note" *ngIf="addSucess">
     <strong style="color: dimgray;">
         <i class="fas fa-check" style="margin-right: 10px;"></i>
@@ -7,20 +7,26 @@
         <i class="fas fa-close" id="fecharSucess" (click)="addSucess = false;"></i>
     </strong>
 </p>
+
+<!-- Detalhes do Filme -->
 <section id="filme-details">
     <div class="filme-card">
 
+        <!-- Informações a Esquerda -->
         <div class="filme-left">
             <div *ngIf="filme.foto; else noImg">
                 <img mat-card-image src="{{filme.foto}}" class="filme-foto">
             </div>
 
+            <!-- Filme sem Imagem -->
             <ng-template #noImg>
                 <img mat-card-image src="../../assets/images/ef3-placeholder-image.jpg" class="filme-foto">
             </ng-template>
 
-
+            <!-- Botões para Adicionar ao Carrinho -->
             <div class="filme-botoes">
+
+                <!-- Comprar Filme -->
                 <a mdbRipple class="nav-link btn btn-primary btn-raised filme-button"
                     (click)="adicionarAoCarrinhoCompra(filme)" (click)="addSucess = true;">
                     <span class="filme-preco">
@@ -32,6 +38,8 @@
                         Comprar
                     </span>
                 </a>
+
+                <!-- Alugar Filme -->
                 <a mdbRipple class="nav-link btn btn-outline-primary btn-raised filme-button"
                     (click)="adicionarAoCarrinhoAluguel(filme)" (click)="addSucess = true;">
                     <span class="filme-preco">
@@ -46,15 +54,20 @@
             </div>
         </div>
 
+        <!-- Informações a Direita -->
         <div class="filme-right">
+
+            <!-- Nome do Filme -->
             <h1 class="filme-nome">
                 {{ filme.nome }}
             </h1>
 
+            <!-- Descrição do Filme -->
             <h5 class="filme-desc">
                 {{ filme.desc }}
             </h5>
 
+            <!-- Data de Lançamento e Diretor do Filme -->
             <h6 class="filme-subcategorias">
                 Data de Lancamento: {{ filme.data_lancamento }}
                 <br>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { ItemCarrinho } from 'src/models/ItemCarrinho';
 import { CarrinhoService } from 'src/services/carrinho.service';
 
 @Component({
@@ -10,10 +11,29 @@ import { CarrinhoService } from 'src/services/carrinho.service';
 })
 export class CarrinhoComponent implements OnInit {
 
-  constructor(private carrinhoService: CarrinhoService, private router: Router) { }
+  itensCarrinho: ItemCarrinho[];
+  deleteConfirm = false;
+  itemId: number = 0;
+
+  constructor(private carrinhoService: CarrinhoService, private router: Router) {
+    this.itensCarrinho = [];
+  }
 
   ngOnInit(): void {
-  
+    this.getList();
+  }
+
+  getList() {
+    this.carrinhoService.listar()
+      .subscribe(itensCarrinho => {
+        this.itensCarrinho = itensCarrinho;
+      })
+  }
+
+  excluir(id: number) {
+    this.carrinhoService.excluir(id).subscribe(() => {
+      this.getList();
+    });
   }
 
   formatar(valor: BehaviorSubject<number>) {
@@ -22,5 +42,10 @@ export class CarrinhoComponent implements OnInit {
       currency: 'BRL',
     });
     return conversor.format(valor.getValue());
+  }
+
+  saveId(id: number){
+    this.itemId = id;
+    return this.itemId;
   }
 }

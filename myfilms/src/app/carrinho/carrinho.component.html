@@ -1,45 +1,63 @@
 <!-- Carrinho -->
-<section class="vh-100" id="carrinho">
+<section class="vh-90">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col">
 
                 <!-- Titulo -->
                 <p><span style="color: white;" class="h2">My Films Cart </span></p>
-                
-                <!-- Itens do Carrinho -->
-                <div class="card mb-4">
+
+                <!-- Carrinho Vazio -->
+                <div class="card mb-4" *ngIf="itensCarrinho.length < 1">
                     <div class="card-body p-4">
+                        <span style="color: grey;" class="col-md d-flex justify-content-center">
+                            Seu carrinho está vazio !
+                            <img src="/assets/images/icone_triste.png" style="height: 20px; margin-left: 10px;">
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Itens do Carrinho -->
+                <div class="card mb-4" *ngFor="let item of itensCarrinho">
+
+                    <div class="card-body p-4" *ngIf="itensCarrinho.length > 0">
                         <div class="row align-items-center">
 
                             <!-- Imagem do Item -->
                             <div class="col-md-2">
-                                <img src="../../assets/images/A-Hora-Do-Pesadelo.jpg" class="img" alt="Item-Image"
-                                    id="itemFoto">
+                                <img src="{{item.filmes.foto}}" class="img" alt="Item-Image" id="itemFoto">
                             </div>
 
                             <!-- Nome do Item -->
                             <div class="col-md-4 d-flex justify-content-center">
                                 <div>
                                     <p class="small text-muted mb-4 pb-2">Name</p>
-                                    <p class="lead fw-normal mb-0">A Hora do Pesadelo</p>
+                                    <p class="lead fw-normal mb-0">{{item.filmes.nome}}</p>
                                 </div>
                             </div>
 
                             <!-- Tipo de Transação -->
-                            <div class="col-md-3 d-flex justify-content-center">
+                            <div class="col-md-2 d-flex justify-content-center">
                                 <div>
                                     <p class="small text-muted mb-4 pb-2">Type</p>
-                                    <p class="lead fw-normal mb-0">Compra</p>
+                                    <p class="lead fw-normal mb-0">{{item.filmes.tipo}}</p>
                                 </div>
                             </div>
 
                             <!-- Preço -->
-                            <div class="col-md-3 d-flex justify-content-center">
+                            <div class="col-md-2 d-flex justify-content-center">
                                 <div>
                                     <p class="small text-muted mb-4 pb-2">Price</p>
-                                    <p class="lead fw-normal mb-0">R$20.00</p>
+                                    <p class="lead fw-normal mb-0">R${{item.filmes.preco}}</p>
                                 </div>
+                            </div>
+
+                            <!-- Remover -->
+                            <div class="col-md-2 d-flex justify-content-center">
+                                <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar"
+                                    data-mdb-ripple-color="dark" (click)="saveId(item.id);  deleteConfirm = true">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -48,26 +66,49 @@
                 <!-- Cupom e Total -->
                 <div class="card mb-5">
                     <div class="card-body p-4 d-flex">
-                        
+
                         <!-- Cupom de Desconto -->
                         <div class="form-outline flex-fill">
                             <input type="text" id="form1" class="form-control form-control-lg" />
                             <label class="form-label" for="form1">Discound code</label>
                         </div>
-                        <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
+                        <button type="button" class="btn btn-outline-primary btn-lg ms-3">Apply</button>
 
                         <!-- Total -->
                         <p class="mb-0 me-5 d-flex align-items-center" style="margin-left: 3vw;">
                             <span class="small text-muted me-2">Order total:</span> <span
-                                class="lead fw-normal">R$20.00</span>
+                                class="lead fw-normal">R$</span>
                         </p>
                     </div>
                 </div>
 
                 <!-- Botões de Ação -->
                 <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
-                    <button type="button" class="btn btn-primary btn-lg">Finalize purchase</button>
+                    <button type="button" class="btn btn-light btn-lg me-2" routerLink="/">Continue shopping</button>
+                    <button type="button" class="btn btn-primary btn-lg" routerLink="/"><b>Finalize purchase</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Deleção -->
+    <div class="delete-modal" *ngIf="deleteConfirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><b>Remover Item</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                        (click)="deleteConfirm=false" style="color: white;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Tem certeza que deseja remover o item selecionado ?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" (click)="deleteConfirm = false"><b>Close</b></button>
+                    <button type="button" class="btn btn-danger"
+                        (click)="excluir(itemId); deleteConfirm = false"><b>Delete</b></button>
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ export class CarrinhoService {
   itensDoCarrinho: ItemCarrinho[];
 
 
-  URL = "http://localhost:3001/pedidos";
+  URL = "http://localhost:3001/carrinho";
 
   constructor(private http: HttpClient) {
     this.itensDoCarrinho = [];

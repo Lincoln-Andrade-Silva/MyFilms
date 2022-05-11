@@ -1,92 +1,60 @@
-<!-- Carrinho -->
-<div class="carrinho">
-    <div class="carrinho-content">
+<section class="vh-100" id="carrinho">
+    <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col">
+                <p><span style="color: white;" class="h2">My Films Cart </span></p>
 
-        <!-- Carrinho Vazio -->
-        <div *ngIf="isCarrinhoVazio | async" class="divVazio">
-            <span style="color: white;">Seu carrinho está vazio! </span>
-            <img src="/assets/images/icone_triste.png" style="height: 20px;">
+                <div class="card mb-4">
+                    <div class="card-body p-4">
+
+                        <div class="row align-items-center">
+                            <div class="col-md-2">
+                                <img src="../../assets/images/A-Hora-Do-Pesadelo.jpg" class="img" alt="Item-Image"
+                                    id="itemFoto">
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-center">
+                                <div>
+                                    <p class="small text-muted mb-4 pb-2">Name</p>
+                                    <p class="lead fw-normal mb-0">A Hora do Pesadelo</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center">
+                                <div>
+                                    <p class="small text-muted mb-4 pb-2">Type</p>
+                                    <p class="lead fw-normal mb-0">Compra</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex justify-content-center">
+                                <div>
+                                    <p class="small text-muted mb-4 pb-2">Price</p>
+                                    <p class="lead fw-normal mb-0">R$20.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="card mb-5">
+                    <div class="card-body p-4 d-flex">
+                        <div class="form-outline flex-fill">
+                            <input type="text" id="form1" class="form-control form-control-lg" />
+                            <label class="form-label" for="form1">Discound code</label>
+                        </div>
+                        <button type="button" class="btn btn-outline-warning btn-lg ms-3">Apply</button>
+                        <p class="mb-0 me-5 d-flex align-items-center" style="margin-left: 3vw;">
+                            <span class="small text-muted me-2">Order total:</span> <span
+                                class="lead fw-normal">R$20.00</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn btn-light btn-lg me-2">Continue shopping</button>
+                    <button type="button" class="btn btn-primary btn-lg">Finalize purchase</button>
+                </div>
+
+            </div>
         </div>
-
-        <!-- Itens Carrinho -->
-        <table *ngIf="!(isCarrinhoVazio | async)" mat-table [dataSource]="itensDoCarrinho">
-            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tr-header-carrinho"></tr>
-
-            <!-- Foto do Filme -->
-            <ng-container matColumnDef=" ">
-                <th mat-header-cell *matHeaderCellDef class="ng-container-vazio"></th>
-                <td mat-cell *matCellDef="let filme" class="ng-container-vazio"><img mat-card-image src="{{filme.foto}}"
-                        class="filme-foto"></td>
-            </ng-container>
-
-            <!-- Nome do Filme -->
-            <ng-container matColumnDef="Nome">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"> Nome </th>
-                <td mat-cell *matCellDef="let filme " class="ng-container"> {{filme.nome}} </td>
-            </ng-container>
-
-            <!-- Tipo de Compra do Filme -->
-            <ng-container matColumnDef="Tipo">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"> Tipo </th>
-                <td mat-cell *matCellDef="let filme" class="ng-container"> {{filme.tipo}} </td>
-            </ng-container>
-
-            <!-- Valor Unitário do Filme -->
-            <ng-container matColumnDef="Valor-uni">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"> Valor Unitário </th>
-                <td mat-cell *matCellDef="let filme" class="ng-container"> R${{filme.preco}} </td>
-            </ng-container>
-
-            <!-- Subtotal -->
-            <ng-container matColumnDef="SubTotal">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"> SubTotal </th>
-                <td mat-cell *matCellDef="let filme" class="ng-container"> R${{getSubtotal(filme)}} </td>
-            </ng-container>
-
-            <!-- Quantidade -->
-            <ng-container matColumnDef="Quantidade">
-                <th mat-header-cell *matHeaderCellDef class="ng-container">
-                    Quantidade
-                </th>
-                <td mat-cell *matCellDef="let filme" class="ng-container">
-                    {{filme.quantidade}}
-                </td>
-            </ng-container>
-
-            <!-- Colunas Vazias -->
-            <ng-container matColumnDef="hehe">
-                <th mat-header-cell *matHeaderCellDef class="ng-container-vazio"></th>
-                <td mat-footer-cell *matFooterCellDef colspan="2" class="ng-container-vazio"></td>
-            </ng-container>
-
-            <!-- Valor Total -->
-            <ng-container matColumnDef="lbltotal">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
-                <td mat-footer-cell *matFooterCellDef class="ng-container">
-                    Valor total
-                </td>
-            </ng-container>
-
-            <ng-container matColumnDef="total">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
-                <td mat-footer-cell *matFooterCellDef class="ng-container">
-                    {{ formatar(valorTotalDoPedido) }}
-                </td>
-            </ng-container>
-
-            <!-- Confirmar pedido -->
-            <ng-container matColumnDef="confirmar">
-                <th mat-header-cell *matHeaderCellDef class="ng-container"></th>
-                <td mat-footer-cell *matFooterCellDef class="ng-container">
-                    <button mat-raised-button color="primary" (click)="limpar()">
-                        Confirmar pedido
-                    </button>
-                </td>
-            </ng-container>
-
-            <!-- Colunas da Tabela -->
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            <tr mat-footer-row *matFooterRowDef="['hehe', 'lbltotal', 'total', 'confirmar']"></tr>
-        </table>
     </div>
-</div>
+</section>

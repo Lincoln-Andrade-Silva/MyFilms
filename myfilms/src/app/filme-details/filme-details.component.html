@@ -2,8 +2,7 @@
 <p class="note note-success custom-note" *ngIf="addSucess">
     <strong style="color: dimgray;">
         <i class="fas fa-check" style="margin-right: 10px;"></i>
-        <a *ngIf="plural">{{countItem}} Itens adicionados ao carrinho</a>
-        <a *ngIf="!plural">Item adicionado ao carrinho</a>
+        <a>Item adicionado ao carrinho</a>
         <i class="fas fa-close" id="fecharSucess" (click)="addSucess = false;"></i>
     </strong>
 </p>

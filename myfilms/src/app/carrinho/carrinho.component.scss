@@ -1,32 +1,4 @@
-.carrinho {
-    position: relative;
-	width: 100%;
-	margin-bottom: 5vh;
-	margin-top: 5vh;
-}
-
-.carrinho-content {
-    display: flex;
-	justify-content: center;
-	align-content: center;
-}
-
-.filme-foto {
-    width: 4em;
-    height: 5em;
-}
-table {
-    width: 90%;
-    margin: 1%;
-}
-.ng-container {
-    padding: 10px;
-    text-align: center;
-    color: white;
-}
-.ng-container-vazio {
-    padding: 10px;
-    text-align: center;
-    color: white;
-    border: 0px;
+#itemFoto {
+    width: 20vh;
+    height: 20vh;
 }

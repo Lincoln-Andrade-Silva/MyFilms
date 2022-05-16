@@ -122,7 +122,7 @@
       "diretor": "Timotio timotio"
     },
     {
-      "id": 23,
+      "id": 26,
       "nome": "A Hora do Pesadelo 5",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/A-Hora-Do-Pesadelo5.jpg",
@@ -292,10 +292,10 @@
       "id": 1,
       "itens": [
         {
-          "id": 2,
-          "nome": "A Hora do Pesadelo 2",
-          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/A-Hora-Do-Pesadelo2.jpg",
+          "id": 26,
+          "nome": "A Hora do Pesadelo 5",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo5.jpg",
           "categoria": "Terror",
           "preco_aluguel": "10.00",
           "preco_fixo": "20.00",
@@ -306,64 +306,22 @@
           "quantidade": 1
         }
       ],
-      "comprador": "Lels do Pjl",
+      "comprador": "admin",
       "total": 20
     },
     {
       "id": 2,
       "itens": [
         {
-          "id": 16,
-          "nome": "Elas Contra o Serial Killer",
+          "id": 4,
+          "nome": "Meu Malvado Favorito",
           "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/ElasContraOSerialKiller.jpg",
-          "categoria": "Documentário",
+          "foto": "/assets/images/Meu-Malvado-Favorito.jpg",
+          "categoria": "Infantil",
           "preco_aluguel": "10.00",
           "preco_fixo": "20.00",
           "data_lancamento": "20 de dezembro de 2011",
-          "diretor": "Timotio timotio",
-          "preco": "20.00",
-          "tipo": "Compra",
-          "quantidade": 1
-        },
-        {
-          "id": 19,
-          "nome": "Notorious B.I.G: A Lenda do Hip Hop",
-          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/NotoriousBIG.jpg",
-          "categoria": "Documentário",
-          "preco_aluguel": "10.00",
-          "preco_fixo": "20.00",
-          "data_lancamento": "20 de dezembro de 2011",
-          "diretor": "Timotio timotio",
-          "preco": "20.00",
-          "tipo": "Compra",
-          "quantidade": 1
-        },
-        {
-          "id": 25,
-          "nome": "Minha Mãe é uma Peça 2",
-          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/MinhaMaeÉUmaPeça2.jpg",
-          "categoria": "Comédia",
-          "preco_aluguel": "10.00",
-          "preco_fixo": "20.00",
-          "data_lancamento": "20 de dezembro de 2011",
-          "diretor": "Timotio timotio",
-          "preco": "10.00",
-          "tipo": "Aluguel",
-          "quantidade": 1
-        },
-        {
-          "id": 12,
-          "nome": "A Hora do Pesadelo 6",
-          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/A-Hora-Do-Pesadelo6.jpg",
-          "categoria": "Terror",
-          "preco_aluguel": "10.00",
-          "preco_fixo": "20.00",
-          "data_lancamento": "20 de dezembro de 2011",
-          "diretor": "Timotio timotio",
+          "diretor": "Toni garrido",
           "preco": "20.00",
           "tipo": "Compra",
           "quantidade": 1
@@ -383,22 +341,57 @@
           "quantidade": 1
         },
         {
-          "id": 1,
-          "nome": "A Hora do Pesadelo",
+          "id": 7,
+          "nome": "Vovózona",
           "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/A-Hora-Do-Pesadelo.jpg",
+          "foto": "/assets/images/Vovozona.jpg",
+          "categoria": "Comédia",
+          "preco_aluguel": 9.99,
+          "preco_fixo": 20.99,
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Toni boy",
+          "preco": 20.99,
+          "tipo": "Compra",
+          "quantidade": 1
+        }
+      ],
+      "comprador": "Hehe do Pjl",
+      "total": 50.99
+    },
+    {
+      "id": 3,
+      "itens": [
+        {
+          "id": 7,
+          "nome": "Vovózona",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/Vovozona.jpg",
+          "categoria": "Comédia",
+          "preco_aluguel": 9.99,
+          "preco_fixo": 20.99,
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Toni boy",
+          "preco": 9.99,
+          "tipo": "Aluguel",
+          "quantidade": 1
+        },
+        {
+          "id": 11,
+          "nome": "A Hora do Pesadelo 4",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo4.jpg",
           "categoria": "Terror",
           "preco_aluguel": "10.00",
           "preco_fixo": "20.00",
           "data_lancamento": "20 de dezembro de 2011",
           "diretor": "Timotio timotio",
-          "preco": "10.00",
-          "tipo": "Aluguel",
+          "preco": "20.00",
+          "tipo": "Compra",
           "quantidade": 1
         }
       ],
       "comprador": "Drauzio Vrau Nelas",
-      "total": 90
+      "total": 29.99
     }
   ]
 }

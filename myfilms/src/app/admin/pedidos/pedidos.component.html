@@ -2,10 +2,15 @@
     <div class="container">
         <div class="search">
 
+             <!-- Adicionar Pedido -->
+             <div routerLink="/" mdbRipple style="float: left; left: 0;"
+             class="nav-link btn btn-primary btn-raised login-button"><a><i class="fas fa-plus"></i>
+                 Pedido</a></div>
+
             <!-- Redirecionar para Filmes -->
-            <div routerLink="/admin/filmes/listar" mdbRipple style="float: left; left: 0;"
+            <div routerLink="/admin/filmes/listar" mdbRipple style="float: left; margin-left: 10px;"
                 class="nav-link btn btn-primary btn-raised login-button"><a><i class="fas fa-list"></i>
-                    Filme</a></div>
+                    Filmes</a></div>
 
             <!-- Buscar Pedidos -->
             <div class="search-itens">
@@ -17,6 +22,30 @@
                     <label mdbLabel class="form-label custom-label" for="formWhite"><i
                             class="fas fa-search"></i></label>
                 </mdb-form-control>
+
+                <!-- Dropdown Filter -->
+                <div mdbDropdown class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" mdbDropdownToggle
+                        mdbRipple aria-expanded="false">
+
+                        <!-- Valor Exibido-->
+                        <span *ngIf="filter==='id'"> Filter </span>
+                        <span *ngIf="filter==='totaldec'"> Total <i class="fas fa-arrow-down"></i></span>
+                        <span *ngIf="filter==='totalcres'"> Total <i class="fas fa-arrow-up"></i></span>
+                    </button>
+
+                    <!-- Valores -->
+                    <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                            <button mdbRipple class="dropdown-item" (click)="setFilter('totaldec')">Total <i
+                                    class="fas fa-arrow-down"></i></button>
+                        </li>
+                        <li>
+                            <button mdbRipple class="dropdown-item" (click)="setFilter('totalcres')">Total <i
+                                    class="fas fa-arrow-up"></i></button>
+                        </li>
+                    </ul>
+                </div>
 
             </div>
         </div>

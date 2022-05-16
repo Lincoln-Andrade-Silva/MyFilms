@@ -25,6 +25,9 @@ export class AdicionarComponent implements OnInit {
   }
 
   adicionarFilme() {
+    if(this.filme.categoria=" ") {
+      this.filme.categoria = "Sem Categoria";
+    }
     this.service.incluir(this.filme).subscribe(() => {
       this.router.navigate(['/admin/filmes/listar']);
 

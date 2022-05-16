@@ -35,6 +35,7 @@ import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { AdicionarComponent } from './admin/adicionar/adicionar.component';
 import { ListarComponent } from './admin/listar/listar.component';
 import { EditarComponent } from './admin/editar/editar.component';
+import { PedidosComponent } from './admin/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { EditarComponent } from './admin/editar/editar.component';
     AdicionarComponent,
     ListarComponent,
     EditarComponent,
+    PedidosComponent,
   ],
   imports: [
     BrowserModule,

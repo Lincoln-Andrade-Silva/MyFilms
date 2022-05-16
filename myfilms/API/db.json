@@ -306,11 +306,54 @@
           "quantidade": 1
         }
       ],
+      "comprador": "Lels do Pjl",
       "total": 20
     },
     {
       "id": 2,
       "itens": [
+        {
+          "id": 16,
+          "nome": "Elas Contra o Serial Killer",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/ElasContraOSerialKiller.jpg",
+          "categoria": "Documentário",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "20.00",
+          "tipo": "Compra",
+          "quantidade": 1
+        },
+        {
+          "id": 19,
+          "nome": "Notorious B.I.G: A Lenda do Hip Hop",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/NotoriousBIG.jpg",
+          "categoria": "Documentário",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "20.00",
+          "tipo": "Compra",
+          "quantidade": 1
+        },
+        {
+          "id": 25,
+          "nome": "Minha Mãe é uma Peça 2",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/MinhaMaeÉUmaPeça2.jpg",
+          "categoria": "Comédia",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "10.00",
+          "tipo": "Aluguel",
+          "quantidade": 1
+        },
         {
           "id": 12,
           "nome": "A Hora do Pesadelo 6",
@@ -326,21 +369,36 @@
           "quantidade": 1
         },
         {
-          "id": 9,
-          "nome": "Vovózona 3",
+          "id": 6,
+          "nome": "Meu Malvado Favorito 3",
           "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-          "foto": "/assets/images/Vovozona3.jpg",
-          "categoria": "Comédia",
+          "foto": "/assets/images/Meu-Malvado-Favorito3.jpg",
+          "categoria": "Infantil",
           "preco_aluguel": "10.00",
           "preco_fixo": "20.00",
           "data_lancamento": "20 de dezembro de 2011",
-          "diretor": "Toni boy",
+          "diretor": "Toni garrido",
+          "preco": "10.00",
+          "tipo": "Aluguel",
+          "quantidade": 1
+        },
+        {
+          "id": 1,
+          "nome": "A Hora do Pesadelo",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
           "preco": "10.00",
           "tipo": "Aluguel",
           "quantidade": 1
         }
       ],
-      "total": 30
+      "comprador": "Drauzio Vrau Nelas",
+      "total": 90
     }
   ]
 }

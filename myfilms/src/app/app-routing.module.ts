@@ -5,6 +5,8 @@ import { AdminComponent } from './admin/admin.component';
 import { EditarComponent } from './admin/editar/editar.component';
 import { ListarComponent } from './admin/listar/listar.component';
 import { PedidosComponent } from './admin/pedidos/pedidos.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { FilmeDetailsComponent } from './filme-details/filme-details.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +24,8 @@ const routes: Routes = [
   },
   { path: 'filme-details/:id', component: FilmeDetailsComponent },
   { path: 'carrinho', component: CarrinhoComponent },
+  { path: 'auth/login', component: LoginComponent},
+  { path: 'auth/register', component: RegisterComponent}
 ];
 
 @NgModule({

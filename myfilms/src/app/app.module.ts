@@ -36,6 +36,8 @@ import { AdicionarComponent } from './admin/adicionar/adicionar.component';
 import { ListarComponent } from './admin/listar/listar.component';
 import { EditarComponent } from './admin/editar/editar.component';
 import { PedidosComponent } from './admin/pedidos/pedidos.component';
+import { LoginComponent } from './auth/login/login.component';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { PedidosComponent } from './admin/pedidos/pedidos.component';
     ListarComponent,
     EditarComponent,
     PedidosComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

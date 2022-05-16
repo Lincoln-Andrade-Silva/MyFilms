@@ -1,6 +1,21 @@
+table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #itemFoto {
-    width: 20vh;
-    height: 20vh;
+    width: 150px;
+    height: 200px;
+    margin-right: 150px;
+}
+
+th {
+    font-size: 15px;
+}
+
+td {
+    font-size: 20px;
+    width: 35vh;
 }
 
 .delete-modal {

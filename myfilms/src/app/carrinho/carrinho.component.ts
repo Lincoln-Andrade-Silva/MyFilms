@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
+import { Filme } from 'src/models/Filme';
 import { ItemCarrinho } from 'src/models/ItemCarrinho';
-import { CarrinhoService } from 'src/services/carrinho.service';
+import { CarrinhoService, ItemDataSource } from 'src/services/carrinho.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -11,29 +12,37 @@ import { CarrinhoService } from 'src/services/carrinho.service';
 })
 export class CarrinhoComponent implements OnInit {
 
-  itensCarrinho: ItemCarrinho[];
   deleteConfirm = false;
-  itemId: number = 0;
+  filme: Filme = new Filme();
 
-  constructor(private carrinhoService: CarrinhoService, private router: Router) {
-    this.itensCarrinho = [];
+  constructor(private carrinhoService: CarrinhoService) {
   }
+
+  isCarrinhoVazio: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    true
+  );
+
+  valorTotalDoPedido: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  itensDoCarrinho: ItemDataSource = new ItemDataSource();
+  displayedColumns: string[] = ['Photo', 'Nome', 'Type', 'Price', 'Remove']
 
   ngOnInit(): void {
-    this.getList();
+    this.itensDoCarrinho = this.carrinhoService.fonteDeDados;
+    this.valorTotalDoPedido = this.carrinhoService.valorTotalDoPedido;
+    this.isCarrinhoVazio = this.carrinhoService.isCarrinhoVazio;
+    console.log(this.itensDoCarrinho);
   }
 
-  getList() {
-    this.carrinhoService.listar()
-      .subscribe(itensCarrinho => {
-        this.itensCarrinho = itensCarrinho;
-      })
+  limpar(){
+    this.carrinhoService.limpar();
   }
 
-  excluir(id: number) {
-    this.carrinhoService.excluir(id).subscribe(() => {
-      this.getList();
-    });
+  excluir(){
+    this.carrinhoService.removerItem(this.filme)
+  }
+
+  saveFilme(filme: Filme){
+    this.filme = filme
   }
 
   formatar(valor: BehaviorSubject<number>) {
@@ -44,8 +53,10 @@ export class CarrinhoComponent implements OnInit {
     return conversor.format(valor.getValue());
   }
 
-  saveId(id: number){
-    this.itemId = id;
-    return this.itemId;
+  truncate(str: string | undefined) {
+    if (str) {
+      return str.substring(0, 16) + '...';
+    } else { return str }
   }
+
 }

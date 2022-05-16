@@ -8,7 +8,7 @@
                 <p><span style="color: white;" class="h2">My Films Cart </span></p>
 
                 <!-- Carrinho Vazio -->
-                <div class="card mb-4" *ngIf="itensCarrinho.length < 1">
+                <div class="card mb-4" *ngIf="isCarrinhoVazio | async">
                     <div class="card-body p-4">
                         <span style="color: grey;" class="col-md d-flex justify-content-center">
                             Seu carrinho está vazio !
@@ -18,49 +18,100 @@
                 </div>
 
                 <!-- Itens do Carrinho -->
-                <div class="card mb-4" *ngFor="let item of itensCarrinho">
+                <div class="card mb-4">
+                    <table mat-table *ngIf="!(isCarrinhoVazio | async)" [dataSource]="itensDoCarrinho"
+                        style="border-color: transparent;">
+                        <div class="card-body p-4">
+                            <div class="row align-items-center">
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns" class="tr-header-carrinho">
+                                </tr>
 
-                    <div class="card-body p-4" *ngIf="itensCarrinho.length > 0">
-                        <div class="row align-items-center">
-
-                            <!-- Imagem do Item -->
-                            <div class="col-md-2">
-                                <img src="{{item.filmes.foto}}" class="img" alt="Item-Image" id="itemFoto">
-                            </div>
-
-                            <!-- Nome do Item -->
-                            <div class="col-md-4 d-flex justify-content-center">
-                                <div>
-                                    <p class="small text-muted mb-4 pb-2">Name</p>
-                                    <p class="lead fw-normal mb-0">{{item.filmes.nome}}</p>
+                                <!-- Imagem do Item -->
+                                <div class="col-md">
+                                    <ng-container matColumnDef="Photo">
+                                        <th mat-header-cell *matHeaderCellDef>
+                                        </th>
+                                        <td mat-cell *matCellDef="let filme">
+                                            <img src="{{filme.foto}}" class="img" alt="Item-Image" id="itemFoto">
+                                        </td>
+                                    </ng-container>
                                 </div>
-                            </div>
 
-                            <!-- Tipo de Transação -->
-                            <div class="col-md-2 d-flex justify-content-center">
-                                <div>
-                                    <p class="small text-muted mb-4 pb-2">Type</p>
-                                    <p class="lead fw-normal mb-0">{{item.filmes.tipo}}</p>
+                                <!-- Nome do Item -->
+                                <div class="col-md d-flex justify-content-center">
+                                    <div>
+                                        <ng-container matColumnDef="Nome">
+                                            <p class="small text-muted mb-4 pb-2">
+                                                <th mat-header-cell *matHeaderCellDef>
+                                                    Name
+                                                </th>
+                                            </p>
+                                            <p class="lead fw-normal mb-0">
+                                                <td mat-cell *matCellDef="let filme">
+                                                    {{truncate(filme.nome)}}
+                                                </td>
+                                            </p>
+                                        </ng-container>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Preço -->
-                            <div class="col-md-2 d-flex justify-content-center">
-                                <div>
-                                    <p class="small text-muted mb-4 pb-2">Price</p>
-                                    <p class="lead fw-normal mb-0">R${{item.filmes.preco}}</p>
+                                <!-- Tipo de Transação -->
+                                <div class="col-md d-flex justify-content-center">
+                                    <div>
+                                        <ng-container matColumnDef="Type">
+                                            <p class="small text-muted mb-4 pb-2">
+                                                <th mat-header-cell *matHeaderCellDef>
+                                                    Type
+                                                </th>
+                                            </p>
+                                            <p class="lead fw-normal mb-0">
+                                                <td mat-cell *matCellDef="let filme">
+                                                    {{filme.tipo}}
+                                                </td>
+                                            </p>
+                                        </ng-container>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- Remover -->
-                            <div class="col-md-2 d-flex justify-content-center">
-                                <button mdbRipple type="button" class="btn btn-outline-danger btn-deletar"
-                                    data-mdb-ripple-color="dark" (click)="saveId(item.id);  deleteConfirm = true">
-                                    <i class="fas fa-trash"></i>
-                                </button>
+                                <!-- Preço -->
+                                <div class="col-md d-flex justify-content-center">
+                                    <div>
+                                        <ng-container matColumnDef="Price">
+                                            <p class="small text-muted mb-4 pb-2">
+                                                <th mat-header-cell *matHeaderCellDef>
+                                                    Price
+                                                </th>
+                                            </p>
+                                            <p class="lead fw-normal mb-0">
+                                                <td mat-cell *matCellDef="let filme">
+                                                    {{filme.preco}}
+                                                </td>
+                                            </p>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                                <!-- Remover -->
+                                <div class="col-md d-flex justify-content-center">
+                                    <div>
+                                        <ng-container matColumnDef="Remove">
+                                            <th mat-header-cell *matHeaderCellDef>
+                                            </th>
+                                            <td mat-cell *matCellDef="let filme" style="text-align: center;">
+                                                <button mdbRipple type="button"
+                                                    class="btn btn-outline-danger btn-deletar"
+                                                    data-mdb-ripple-color="dark"
+                                                    (click)="saveFilme(filme);  deleteConfirm = true">
+                                                    <i class="fas fa-trash"></i>
+                                                </button>
+                                            </td>
+                                        </ng-container>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
                 </div>
 
                 <!-- Cupom e Total -->
@@ -76,16 +127,18 @@
 
                         <!-- Total -->
                         <p class="mb-0 me-5 d-flex align-items-center" style="margin-left: 3vw;">
-                            <span class="small text-muted me-2">Order total:</span> <span
-                                class="lead fw-normal">R$</span>
+                            <span class="small text-muted me-2">Order total:</span>
+                            <span class="lead fw-normal"> {{ formatar(valorTotalDoPedido) }}</span>
                         </p>
                     </div>
+
                 </div>
 
                 <!-- Botões de Ação -->
                 <div class="d-flex justify-content-end">
                     <button type="button" class="btn btn-light btn-lg me-2" routerLink="/">Continue shopping</button>
-                    <button type="button" class="btn btn-primary btn-lg" routerLink="/"><b>Finalize purchase</b></button>
+                    <button type="button" class="btn btn-primary btn-lg" (click)="limpar()"><b>Finalize
+                            purchase</b></button>
                 </div>
             </div>
         </div>
@@ -108,7 +161,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" (click)="deleteConfirm = false"><b>Close</b></button>
                     <button type="button" class="btn btn-danger"
-                        (click)="excluir(itemId); deleteConfirm = false"><b>Delete</b></button>
+                        (click)="excluir(); deleteConfirm = false"><b>Delete</b></button>
                 </div>
             </div>
         </div>

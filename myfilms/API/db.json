@@ -122,7 +122,7 @@
       "diretor": "Timotio timotio"
     },
     {
-      "id": 11,
+      "id": 23,
       "nome": "A Hora do Pesadelo 5",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/A-Hora-Do-Pesadelo5.jpg",
@@ -177,7 +177,7 @@
       "diretor": "Timotio timotio"
     },
     {
-      "id": 15,
+      "id": 25,
       "nome": "Minha Mãe é uma Peça 2",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/MinhaMaeÉUmaPeça2.jpg",
@@ -188,7 +188,7 @@
       "diretor": "Timotio timotio"
     },
     {
-      "id": 15,
+      "id": 24,
       "nome": "Minha Mãe é uma Peça 3",
       "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
       "foto": "/assets/images/MinhaMaeÉUmaPeça3.jpg",
@@ -285,24 +285,6 @@
       "preco_fixo": "20.00",
       "data_lancamento": "20 de dezembro de 2011",
       "diretor": "Timotio timotio"
-    }
-  ],
-  "carrinho": [
-    {
-      "id": 1,
-      "filmes": {
-        "id": 3,
-        "nome": "A Hora do Pesadelo 3",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
-        "foto": "/assets/images/A-Hora-Do-Pesadelo3.jpg",
-        "categoria": "Terror",
-        "preco_aluguel": "10.00",
-        "preco_fixo": "20.00",
-        "data_lancamento": "20 de dezembro de 2011",
-        "diretor": "Timotio timotio",
-        "preco": "10.00",
-        "tipo": "Aluguel"
-      }
     }
   ]
 }

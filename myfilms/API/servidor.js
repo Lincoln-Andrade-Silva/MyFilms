@@ -13,4 +13,5 @@ app.get('/filmes', function(req, res) {
 
 app.listen(3000, function(){
     console.log("\nFilmes \nhttp://localhost:3001/filmes\n\n");
+    console.log("\nFilmes \nhttp://localhost:3001/pedidos\n\n");
 })

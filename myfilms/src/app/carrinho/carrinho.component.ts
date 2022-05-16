@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Filme } from 'src/models/Filme';
-import { ItemCarrinho } from 'src/models/ItemCarrinho';
+import { Pedido } from 'src/models/Pedido';
 import { CarrinhoService, ItemDataSource } from 'src/services/carrinho.service';
+import { PedidosService } from 'src/services/pedidos.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -15,7 +15,7 @@ export class CarrinhoComponent implements OnInit {
   deleteConfirm = false;
   filme: Filme = new Filme();
 
-  constructor(private carrinhoService: CarrinhoService) {
+  constructor(private carrinhoService: CarrinhoService, private pedidoService: PedidosService) {
   }
 
   isCarrinhoVazio: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
@@ -30,7 +30,6 @@ export class CarrinhoComponent implements OnInit {
     this.itensDoCarrinho = this.carrinhoService.fonteDeDados;
     this.valorTotalDoPedido = this.carrinhoService.valorTotalDoPedido;
     this.isCarrinhoVazio = this.carrinhoService.isCarrinhoVazio;
-    console.log(this.itensDoCarrinho);
   }
 
   limpar(){
@@ -43,6 +42,16 @@ export class CarrinhoComponent implements OnInit {
 
   saveFilme(filme: Filme){
     this.filme = filme
+  }
+
+  addPedido() {
+    const pedido = new Pedido();
+    pedido.itens = this.carrinhoService.getItens();
+    const total = this.carrinhoService.valorTotalDoPedido.value;
+    pedido.total = Number(total.toFixed(2))
+    this.pedidoService.incluir(pedido).subscribe(() => {
+        this.carrinhoService.limpar();
+      });
   }
 
   formatar(valor: BehaviorSubject<number>) {

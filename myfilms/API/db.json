@@ -286,5 +286,61 @@
       "data_lancamento": "20 de dezembro de 2011",
       "diretor": "Timotio timotio"
     }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "itens": [
+        {
+          "id": 2,
+          "nome": "A Hora do Pesadelo 2",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo2.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "20.00",
+          "tipo": "Compra",
+          "quantidade": 1
+        }
+      ],
+      "total": 20
+    },
+    {
+      "id": 2,
+      "itens": [
+        {
+          "id": 12,
+          "nome": "A Hora do Pesadelo 6",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo6.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "20.00",
+          "tipo": "Compra",
+          "quantidade": 1
+        },
+        {
+          "id": 9,
+          "nome": "Vovózona 3",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/Vovozona3.jpg",
+          "categoria": "Comédia",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Toni boy",
+          "preco": "10.00",
+          "tipo": "Aluguel",
+          "quantidade": 1
+        }
+      ],
+      "total": 30
+    }
   ]
 }

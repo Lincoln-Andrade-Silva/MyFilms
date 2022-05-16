@@ -43,12 +43,11 @@
                                         <ng-container matColumnDef="Nome">
                                             <p class="small text-muted mb-4 pb-2">
                                                 <th mat-header-cell *matHeaderCellDef>
-                                                    Name
                                                 </th>
                                             </p>
                                             <p class="lead fw-normal mb-0">
                                                 <td mat-cell *matCellDef="let filme">
-                                                    {{truncate(filme.nome)}}
+                                                    {{filme.nome}}
                                                 </td>
                                             </p>
                                         </ng-container>
@@ -61,7 +60,6 @@
                                         <ng-container matColumnDef="Type">
                                             <p class="small text-muted mb-4 pb-2">
                                                 <th mat-header-cell *matHeaderCellDef>
-                                                    Type
                                                 </th>
                                             </p>
                                             <p class="lead fw-normal mb-0">
@@ -79,7 +77,6 @@
                                         <ng-container matColumnDef="Price">
                                             <p class="small text-muted mb-4 pb-2">
                                                 <th mat-header-cell *matHeaderCellDef>
-                                                    Price
                                                 </th>
                                             </p>
                                             <p class="lead fw-normal mb-0">

@@ -48,13 +48,33 @@
                     <!-- Categoria do Filme -->
                     <mat-form-field class="form__group field">
                         <label style="margin-bottom: 10px;" class="form__label">Categoria</label><br>
+
+                        <!-- Select Categoria -->
                         <mat-select matNativeControl id="categoria" required name="categoria" class="form__dropdown"
-                            [(value)]="filme.categoria">
+                            [(value)]="filme.categoria" *ngIf="!input">
                             <mat-option *ngFor="let grupo of grupos" [value]="grupo.key">
                                 {{grupo.key}}
                             </mat-option>
+                            <mat-option (click)="input = true">
+                                <i class="fas fa-plus"></i> Nova Categoria
+                            </mat-option>
                         </mat-select>
+
                     </mat-form-field>
+
+                    <!-- Nova Categoria -->
+                    <mat-form-field id="input" *ngIf="input">
+
+                        <!-- Icon para retorno -->
+                        <i class="fas fa-close" id="fecharSucess" (click)="input = false;" style="float: right;"></i>
+
+                        <!-- Input -->
+                        <input matInput class="form__field" name="categoria" id="categoria"
+                            [(ngModel)]="filme.categoria" />
+
+                        <label for="categoria" class="form__label">Nova Categoria</label>
+                    </mat-form-field>
+
                 </div>
             </mat-card-content>
 

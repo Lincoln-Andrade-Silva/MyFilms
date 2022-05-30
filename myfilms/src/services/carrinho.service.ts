@@ -13,6 +13,7 @@ export class CarrinhoService {
   private _mapItens = new Map<number, Filme>();
   private _itens: BehaviorSubject<Filme[]> = new BehaviorSubject<Filme[]>([]);
   public itens = this._itens.asObservable();
+  public quantidade: number = 0;
   public fonteDeDados = new ItemDataSource();
 
   private _totalDeItens: number = 0;
@@ -75,6 +76,7 @@ export class CarrinhoService {
       filme.quantidade = 1;
     }
     this._mapItens.set(filme.id, filme);
+    this.quantidade++;
     this.atualizarDados();
   }
 
@@ -82,6 +84,7 @@ export class CarrinhoService {
     const item = this._mapItens.get(filme.id);
     if (item) {
       this._mapItens.delete(filme.id);
+      this.quantidade--;
       this.atualizarDados();
     }
   }

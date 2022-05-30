@@ -2,23 +2,28 @@
 <section class="vh-90">
     <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col">
 
                 <!-- Titulo -->
-                <p><span style="color: white;" class="h2">My Films Cart </span></p>
-
+                <p><span style="color: white;" class="h2" *ngIf="!(isCarrinhoVazio | async)">Meu carrinho</span></p>
                 <!-- Carrinho Vazio -->
-                <div class="card mb-4" *ngIf="isCarrinhoVazio | async">
-                    <div class="card-body p-4">
-                        <span style="color: grey;" class="col-md d-flex justify-content-center">
-                            Seu carrinho está vazio !
-                            <img src="/assets/images/icone_triste.png" style="height: 20px; margin-left: 10px;">
-                        </span>
+                <div class="card empty-cart mb-4" *ngIf="isCarrinhoVazio | async">
+                    <div class="card-body empty-cart-body p-4">
+                        <i class="fas fa-shopping-cart empty-cart-icon"></i>
+                        <div class="empty-cart-texto">
+                            <span class="col-md d-flex justify-content-center">
+                                Seu carrinho está vazio ! 
+                            </span>
+                            <a routerLink="/" class="voltar-menu">
+                                Continue comprando
+                            <i class="fas fa-arrow-right empty-cart-cotinuar"></i>
+                            </a>
+                        </div>  
                     </div>
                 </div>
 
+            <div class="col checkout-body">
                 <!-- Itens do Carrinho -->
-                <div class="card mb-4">
+                <div class="card mb-4 carrinho-card">
                     <table mat-table *ngIf="!(isCarrinhoVazio | async)" [dataSource]="itensDoCarrinho"
                         style="border-color: transparent;">
                         <div class="card-body p-4">
@@ -48,7 +53,8 @@
                                             </p>
                                             <p class="lead fw-normal mb-0">
                                                 <td mat-cell *matCellDef="let filme">
-                                                    {{truncate(filme.nome)}}
+                                                   <!-- {{truncate(filme.nome)}} -->
+                                                    {{filme.nome}}
                                                 </td>
                                             </p>
                                         </ng-container>
@@ -60,7 +66,7 @@
                                     <div>
                                         <ng-container matColumnDef="Type">
                                             <p class="small text-muted mb-4 pb-2">
-                                                <th mat-header-cell *matHeaderCellDef>
+                                                <th mat-header-cell *matHeaderCellDef class="filme-tipo">
                                                     Type
                                                 </th>
                                             </p>
@@ -84,7 +90,7 @@
                                             </p>
                                             <p class="lead fw-normal mb-0">
                                                 <td mat-cell *matCellDef="let filme">
-                                                    {{filme.preco}}
+                                                    R$ {{filme.preco}}
                                                 </td>
                                             </p>
                                         </ng-container>
@@ -98,12 +104,12 @@
                                             <th mat-header-cell *matHeaderCellDef>
                                             </th>
                                             <td mat-cell *matCellDef="let filme" style="text-align: center;">
-                                                <button mdbRipple type="button"
-                                                    class="btn btn-outline-danger btn-deletar"
+                                                <a mdbRipple type="button"
+                                                class="delete-from-cart"
                                                     data-mdb-ripple-color="dark"
                                                     (click)="saveFilme(filme);  deleteConfirm = true">
-                                                    <i class="fas fa-trash"></i>
-                                                </button>
+                                                    <i class="fas fa-times"></i>
+                                            </a>
                                             </td>
                                         </ng-container>
                                     </div>
@@ -115,30 +121,28 @@
                 </div>
 
                 <!-- Cupom e Total -->
-                <div class="card mb-5">
+                <div class="card mb-5 finalizar-compra" *ngIf="!(isCarrinhoVazio | async)">
                     <div class="card-body p-4 d-flex">
 
                         <!-- Cupom de Desconto -->
-                        <div class="form-outline flex-fill">
+                        <div class="form-outline">
                             <input type="text" id="form1" class="form-control form-control-lg" />
-                            <label class="form-label" for="form1">Discound code</label>
+                            <label class="codigo-desconto" for="form1">Codigo de desconto</label>
                         </div>
-                        <button type="button" class="btn btn-outline-primary btn-lg ms-3">Apply</button>
-
-                        <!-- Total -->
-                        <p class="mb-0 me-5 d-flex align-items-center" style="margin-left: 3vw;">
-                            <span class="small text-muted me-2">Order total:</span>
-                            <span class="lead fw-normal"> {{ formatar(valorTotalDoPedido) }}</span>
-                        </p>
+                        <button type="button" class="btn btn-primary btn-lg ms-3 aplicar-cupom">Aplicar</button>
                     </div>
+                        <!-- Total -->
+                    <p class="mb-0 me-5 d-flex align-items-center subtotal" style="margin-left: 3vw;">
+                        <span class="small text-muted me-2">Subtotal:</span>
+                        <span class="lead fw-normal"> {{ formatar(valorTotalDoPedido) }}</span>
+                    </p>
 
+                    <!-- Botões de Ação -->
+                <div class="carrinho-botoes">
+                    <a mdbRipple class="continuar-comprando" routerLink="/">Continuar comprando</a>
+                    <button type="button" mdbRipple class="btn btn-primary btn-lg finalizar-pedido" (click)="addPedido()"><b>Finalizar pedido</b></button>
                 </div>
 
-                <!-- Botões de Ação -->
-                <div class="d-flex justify-content-end">
-                    <button type="button" class="btn btn-light btn-lg me-2" routerLink="/">Continue shopping</button>
-                    <button type="button" class="btn btn-primary btn-lg" (click)="addPedido()"><b>Finalize
-                            purchase</b></button>
                 </div>
             </div>
         </div>

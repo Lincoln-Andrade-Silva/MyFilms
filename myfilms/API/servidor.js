@@ -1,17 +1,16 @@
+require('./db/database')
+
 const express = require('express');
 const morgan = require('morgan');
-const filmes = require('./db.json');
-
 const app = express();
+const filmeRouter = require('./routes/filmeRouter');
+
 app.use(morgan('dev'));
-app.use(express.urlencoded({'extended': true}));
+app.use(express.urlencoded({'extended': false}));
 app.use(express.json());
+app.use('/filmes', filmeRouter);
 
-app.get('/filmes', function(req, res) {
-    res.json(filmes);
-});
-
-app.listen(3000, function(){
-    console.log("\nFilmes \nhttp://localhost:3001/filmes\n\n");
-    console.log("\nFilmes \nhttp://localhost:3001/pedidos\n\n");
+app.listen(3001, function(){
+    console.log("\nFilmes \nhttp://localhost:3001/filmes");
+    console.log("\nPedidos \nhttp://localhost:3001/pedidos");
 })

@@ -15,6 +15,7 @@ export class EditarComponent implements OnInit {
   filme: Filme = new Filme();
   grupos: any = [];
   categ: string = '';
+  input: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: FilmesService) {
     this.filmes = [];

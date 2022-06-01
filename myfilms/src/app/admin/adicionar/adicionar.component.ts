@@ -13,6 +13,7 @@ export class AdicionarComponent implements OnInit {
   filmes: Filme[];
   filme: Filme = new Filme();
   grupos: any = [];
+  input: boolean = false;
 
   constructor(private route: ActivatedRoute, private router: Router, private service: FilmesService) {
     this.filmes = [];
@@ -25,7 +26,7 @@ export class AdicionarComponent implements OnInit {
   }
 
   adicionarFilme() {
-    if(this.filme.categoria=" ") {
+    if(this.filme.categoria.length==0) {
       this.filme.categoria = "Sem Categoria";
     }
     this.service.incluir(this.filme).subscribe(() => {

@@ -63,4 +63,10 @@ export class CarrinhoComponent implements OnInit {
     return conversor.format(valor.getValue());
   }
 
+  /*truncate(str: string | undefined) {
+    if (str) {
+      return str.substring(0, 99) + '...';
+    } else { return str }
+  }*/
+
 }

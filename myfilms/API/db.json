@@ -392,6 +392,68 @@
       ],
       "comprador": "Drauzio Vrau Nelas",
       "total": 29.99
+    },
+    {
+      "id": 4,
+      "itens": [],
+      "comprador": "admin",
+      "total": 0
+    },
+    {
+      "id": 5,
+      "itens": [
+        {
+          "id": 3,
+          "nome": "A Hora do Pesadelo 3",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo3.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "10.00",
+          "tipo": "Aluguel",
+          "quantidade": 1
+        }
+      ],
+      "comprador": "admin",
+      "total": 10
+    },
+    {
+      "id": 6,
+      "itens": [
+        {
+          "id": 3,
+          "nome": "A Hora do Pesadelo 3",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo3.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "20.00",
+          "tipo": "Compra",
+          "quantidade": 1
+        },
+        {
+          "id": 1,
+          "nome": "A Hora do Pesadelo",
+          "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Neque laoreet suspendisse interdum consectetur. Id volutpat lacus laoreet non curabitur gravida arcu ac tortor. ",
+          "foto": "/assets/images/A-Hora-Do-Pesadelo.jpg",
+          "categoria": "Terror",
+          "preco_aluguel": "10.00",
+          "preco_fixo": "20.00",
+          "data_lancamento": "20 de dezembro de 2011",
+          "diretor": "Timotio timotio",
+          "preco": "10.00",
+          "tipo": "Aluguel",
+          "quantidade": 1
+        }
+      ],
+      "comprador": "admin",
+      "total": 30
     }
   ]
 }

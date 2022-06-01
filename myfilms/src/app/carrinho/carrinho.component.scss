@@ -1,3 +1,5 @@
+@import './../../styles';
+
 table {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -6,7 +8,7 @@ table {
 #itemFoto {
     width: 150px;
     height: 200px;
-    margin-right: 150px;
+    margin-bottom: 20px;
 }
 
 th {
@@ -38,3 +40,131 @@ td {
     padding-top: 37px;
     padding-bottom: 25px;
 }
+tr.mat-header-row {
+    display: none;
+  }
+
+td.cdk-column-Type {
+  position: absolute;
+  padding-top: 150px;
+  font-size: 16px;
+  color: gray;
+  left: 190px;
+  text-align: center;
+}
+td.cdk-column-Nome {
+    font-size: 30px;
+    line-height: 1.4;
+    color: white;
+}
+td.cdk-column-Price {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+.delete-from-cart{
+    color: $text-color;
+
+    &:hover{
+        color: red;
+    }
+}
+
+div.finalizar-compra {
+    width: 30%;
+    background-color: transparent;
+    border-left: 1px solid $tertiary-color;
+    border-radius: 0;
+  }
+
+  div.checkout-body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-body {
+    flex-direction: row;
+  }
+
+  #form1 {
+    height: 50%;
+    font-size: 20px;
+    border: 2px solid $text-color;
+    color: white;
+  }
+  button.aplicar-cupom{
+      height: 50%;
+  }
+
+  label.codigo-desconto {
+    padding-top: 0px !important;
+    color: $text-color !important;
+    background-color: $secondary-color;
+    font-size: 14px;
+    padding: 0px 5px !important;
+  }
+
+  .carrinho-botoes {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+  }
+
+  .continuar-comprando, .finalizar-pedido {
+    margin: 10px 50px;
+  }
+  .finalizar-pedido{
+      background-color: $primary-color !important;
+
+      &:hover{
+          background-color: $tertiary-color !important;
+      }
+  }
+  a.continuar-comprando{
+    text-decoration: underline !important;
+    text-align: center;
+    font-size: 14px;
+    color: #757575 !important;
+
+      &:hover{
+        color: $tertiary-color !important;
+      }
+  }
+  .fw-normal {
+    font-weight: 600 !important;
+    font-size: 40px;
+  }
+  .subtotal{
+      flex-direction: column;
+      margin-top: 25%;
+      color: white;
+  }
+
+  div.empty-cart, div.carrinho-card{
+      background-color: transparent;
+  }
+
+
+  div.empty-cart{
+      color: white;
+
+      div.empty-cart-body{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        i.empty-cart-icon {
+            font-size: 50px;
+            margin-right: 20px;
+          }
+      }
+  }
+  
+  a.voltar-menu{
+      color: $tertiary-color;
+
+      &:hover{
+          color: $primary-color;
+      }
+  }

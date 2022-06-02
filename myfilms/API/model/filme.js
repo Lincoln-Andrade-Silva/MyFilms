@@ -1,20 +1,5 @@
 var mongoose = require('mongoose');
 
-var Schema = mongoose.Schema;
+const filmeSchema = require('./Schemas/filmeSchema'); 
 
-var FilmeSchema = new Schema({
-    id: Number,
-    nome: String,
-    desc: String,
-    foto: String,
-    categoria: String,
-    preco_aluguel: Number,
-    preco_fixo: Number,
-    data_lancamento: String,
-    diretor: String,
-    preco: Number,
-    tipo: String,
-    quantidade: Number 
-});
-
-module.exports = mongoose.model('FilmeModel', FilmeSchema);
+module.exports = mongoose.model('Filme', filmeSchema);

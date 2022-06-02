@@ -1,14 +1,12 @@
 var mongoose = require('mongoose');
-const filmeSchema = require('./filme')
+var filmes = require('../model/Schemas/filmeSchema')
 
-var Schema = mongoose.Schema;
-
-var PedidoSchema = new Schema({
+const PedidoSchema = new mongoose.Schema({
     id: Number,
-    itens:  [filmeSchema],
+    itens:  [filmes],
     data: {type: Date, default: Date.now},
     comprador: String,
     total: Number,
 });
 
-module.exports = mongoose.model('PedidoModel', PedidoSchema);
+module.exports = mongoose.model('Pedido', PedidoSchema);

@@ -3,7 +3,7 @@ const filmeModel = require("../model/filme");
 class FilmeController {
 
     async save(req, res) {
-        const max = await produtoModel.findOne({}).sort({ id: -1 });
+        const max = await filmeModel.findOne({}).sort({ id: -1 });
         const filme = req.body;
         filme.id = max == null ? 1 : max.id + 1;
 

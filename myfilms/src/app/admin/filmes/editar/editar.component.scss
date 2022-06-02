@@ -1,4 +1,4 @@
-@import './../../../styles';
+@import './../../../../styles';
 
 .container {
     margin: 0 10%;
@@ -118,14 +118,14 @@ mdb-form-control{
 }
 
 .mat-card-content {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
-.adicionar-coluna {
-  width: 40%;
-}
+.editar-coluna {
+    width: 40%;
+  }
 
-.mat-card > h4 {
-  margin-bottom: 0 !important;
-}
+  .mat-card > h4 {
+      margin-bottom: 0 !important;
+  }

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdicionarComponent } from './admin/adicionar/adicionar.component';
+import { AdicionarComponent } from './admin/filmes/adicionar/adicionar.component';
 import { AdminComponent } from './admin/admin.component';
-import { EditarComponent } from './admin/editar/editar.component';
-import { ListarComponent } from './admin/listar/listar.component';
-import { PedidosComponent } from './admin/pedidos/pedidos.component';
+import { EditarComponent } from './admin/filmes/editar/editar.component';
+import { ListarComponent } from './admin/filmes/listar/listar.component';
+import { PedidosComponent } from './admin/pedidos/listar/pedidos.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';

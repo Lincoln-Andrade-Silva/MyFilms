@@ -32,10 +32,10 @@ import { SearchPipe } from './pipes/search.pipe';
 import { CategoriaFilterPipe } from './pipes/categoria-filter.pipe';
 import { MdbDropdownModule } from 'mdb-angular-ui-kit/dropdown';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
-import { AdicionarComponent } from './admin/adicionar/adicionar.component';
-import { ListarComponent } from './admin/listar/listar.component';
-import { EditarComponent } from './admin/editar/editar.component';
-import { PedidosComponent } from './admin/pedidos/pedidos.component';
+import { AdicionarComponent } from './admin/filmes/adicionar/adicionar.component';
+import { ListarComponent } from './admin/filmes/listar/listar.component';
+import { EditarComponent } from './admin/filmes/editar/editar.component';
+import { PedidosComponent } from './admin/pedidos/listar/pedidos.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 

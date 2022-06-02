@@ -1,4 +1,4 @@
-@import './../../../styles';
+@import './../../../../styles';
 
 section#listar-pedidos {
 
@@ -46,9 +46,9 @@ section#listar-pedidos {
         margin-left: 20px;
     }
 
-    .btn-editar:hover {
-        border-color: #1b73f7;
-        color: #1b73f7;
+    .btn-view:hover {
+        border-color: #0a47a1;
+        color: #0a47a1;
     }
 
     .btn-deletar:hover {

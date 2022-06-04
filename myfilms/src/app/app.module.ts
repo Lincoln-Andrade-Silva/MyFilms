@@ -38,6 +38,7 @@ import { EditarComponent } from './admin/filmes/editar/editar.component';
 import { PedidosComponent } from './admin/pedidos/listar/pedidos.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { FilmesComponent } from './filmes/filmes.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { RegisterComponent } from './auth/register/register.component';
     PedidosComponent,
     LoginComponent,
     RegisterComponent,
+    FilmesComponent,
   ],
   imports: [
     BrowserModule,

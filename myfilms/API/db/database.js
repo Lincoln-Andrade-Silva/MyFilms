@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const URL = 'mongodb://localhost:27017/myfilms';
+const URL = 'mongodb+srv://Lico:admin123@my-films.mtqfr.mongodb.net/?retryWrites=true&w=majority';
 
 const db = mongoose.connect(URL, {
     useNewUrlParser: true,

@@ -63,7 +63,7 @@ export class CarrinhoComponent implements OnInit {
       pedido.itens = this.carrinhoService.getItens();
       const total = this.carrinhoService.valorTotalDoPedido.value;
       pedido.total = Number(total.toFixed(2));
-      pedido.comprador = 'admin';
+      pedido.comprador = this.usuario.nome;
       this.pedidoService.incluir(pedido).subscribe(() => {
         this.carrinhoService.limpar();
       });

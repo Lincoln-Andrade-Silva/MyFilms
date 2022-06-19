@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 import { Filme } from 'src/models/Filme';
-import { ItemCarrinho } from 'src/models/ItemCarrinho';
 
 @Injectable({
   providedIn: 'root'

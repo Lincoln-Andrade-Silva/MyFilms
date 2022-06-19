@@ -40,13 +40,13 @@
 
                 <!-- User -->
                 <li *ngIf="authService.isAutenticado()" class="nav-item dropdown" mdbDropdown>
-                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                        <button class="btn perfil-button" type="button" id="dropdownMenu2"
                             mdbDropdownToggle mdbRipple aria-expanded="false">
-                            <a mdbRipple class="nav-link"><i class="far fa-user"></i> Bem vindo {{usuario.nome}}</a>
+                            <a class="nav-link"><i class="fas fa-user"></i> {{usuario.nome}} <i class="fas fa-angle-down"></i></a>
                         </button>
-                        <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <ul mdbDropdownMenu class="dropdown-menu dropdown-menu-custom" aria-labelledby="dropdownMenu2">
                             <li>
-                                <a mdbRipple class="dropdown-item" (click)="logout()">Logout</a>
+                                <a mdbRipple class="dropdown-item dropdown-item-custom" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
                             </li>
                         </ul>
                 </li>

@@ -46,3 +46,32 @@ ul.left-nav{
         margin-left: 20px;
     }
 }
+
+button.perfil-button{
+    font-weight: 800;
+    font-size: 16px;
+}
+ul.dropdown-menu-custom, a.dropdown-item-custom{
+    background-color: transparent;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover{
+        background-color: transparent;
+    }
+}
+
+ul.dropdown-menu-custom{
+    border-bottom: 2px solid $primary-darker;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+}
+
+a.dropdown-item-custom{
+    margin-top: 12px;
+    &:hover{
+        color: $tertiary-color;
+    }
+}

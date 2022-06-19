@@ -15,7 +15,7 @@ $tertiary-color: #b591ff;
 $text-color: #C5C6C7;
 
 body{
-    background-color: $secondary-color !important;
+    background: linear-gradient(150deg, $secondary-color, $secondary-light) !important;
     overflow-x: hidden;
 }
 *{

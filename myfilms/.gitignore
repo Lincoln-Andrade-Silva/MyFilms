@@ -36,6 +36,8 @@ yarn-error.log
 /libpeerconnection.log
 testem.log
 /typings
+myfilms/db
+myfilms/API
 
 # System files
 .DS_Store

@@ -1,0 +1,167 @@
+@import './../../../styles';
+
+.container {
+    margin: 0 10%;
+  }
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    color: white;
+    //border: 1px solid white;
+    width: 90%;
+}
+
+mat-form-field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+input {
+    margin-top: 2px;
+    border-bottom: 1px solid white;
+    padding: 5px;
+}
+
+mat-option {
+    color: white;
+}
+
+mat-select {
+    width: 10vw;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    //margin-top: 10px;
+    width: 100%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid $primary-darker;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    padding: 7px;
+    background: transparent;
+    transition: border-color 1s;
+  }
+
+  .form__dropdown {
+    font-family: inherit;
+    width: 50%;
+    border: 0;
+    border-bottom: 2px solid $primary-darker;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    padding: 7px;
+    background: transparent;
+    transition: border-color 1s;
+  }
+
+  .form__dropdown:focus {
+    border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+    transition: 0.2s ;
+    border-image-slice: 1;
+  }
+
+  .form__label{
+      font-size: 12px;
+      margin-top: 2px;
+      padding-left: 7px;
+      color: $text-color;
+  }
+  
+  
+  .form__field:focus {
+    border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+    transition: 0.2s ;
+    border-image-slice: 1;
+  }
+
+.form__textarea{
+    background-color: transparent;
+    border: 2px solid $primary-darker;
+    color: white;
+    outline: none;
+    width: 100%;
+    padding: 7px;
+
+    &:focus {
+        border-image: linear-gradient(to left, $primary-color,$tertiary-color);
+        transition: 0.2s ;
+        border-image-slice: 1;
+    }
+}
+
+mdb-form-control{
+    margin-top: 25px;
+}
+
+.mat-card-actions{
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+}
+.register-button{
+    width: 70%;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+.mat-card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.adicionar-coluna {
+  width: 40%;
+}
+
+.mat-card > h4 {
+  margin-bottom: 0 !important;
+}
+
+.register-form{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+.register-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 15px;
+    border-image: linear-gradient(to left, $tertiary-color, $primary-darker);
+    border-image-slice: 1;
+    padding: 80px;
+}
+
+#register-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.register-texto{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: $text-color;
+    font-size: 14px;
+
+    & > a{
+        color: $primary-color;
+    }
+}

@@ -1,1 +1,32 @@
-<p>register works!</p>
+<div id="register-page">
+    <form class="register-form">
+        <mat-card class="register-card">
+
+            <mat-form-field class="form__group field">
+                <input matInput class="form__field" name="Nome" id="nome" />
+                <label for="nome" class="form__label">Nome</label>
+            </mat-form-field>
+
+            <mat-form-field class="form__group field">
+                <input matInput class="form__field" name="email" id="email" />
+                <label for="email" class="form__label">Email</label>
+            </mat-form-field>
+
+            <mat-form-field class="form__group field">
+                <input matInput class="form__field" name="senha" id="senha" />
+                <label for="senha" class="form__label">Senha</label>
+            </mat-form-field>
+
+            <button mdbRipple class="btn btn-primary register-button"><b>Registrar</b></button>
+
+        </mat-card>
+    </form> 
+
+    <div class="register-texto">
+        Ja tem uma conta?
+        <a routerLink="/auth/login">
+            Faca login
+        </a>
+    </div>
+
+</div>

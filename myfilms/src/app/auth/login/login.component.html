@@ -1,1 +1,26 @@
-<p>login works!</p>
+<div id="login-page">
+    <form class="login-form">
+        <mat-card class="login-card">
+            <mat-form-field class="form__group field">
+                <input matInput class="form__field" name="email" id="email" />
+                <label for="email" class="form__label">Email</label>
+            </mat-form-field>
+
+            <mat-form-field class="form__group field">
+                <input matInput class="form__field" name="senha" id="senha" />
+                <label for="senha" class="form__label">Senha</label>
+            </mat-form-field>
+
+            <button mdbRipple class="btn btn-primary login-button"><b>Entrar</b></button>
+
+        </mat-card>
+    </form> 
+
+    <div class="login-texto">
+        N tem conta?
+        <a routerLink="/auth/register">
+            Faca registro
+        </a>
+    </div>
+
+</div>

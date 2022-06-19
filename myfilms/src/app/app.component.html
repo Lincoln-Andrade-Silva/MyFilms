@@ -1,5 +1,5 @@
-<app-nav></app-nav>
+<app-nav *ngIf="!router.url.includes('/auth')"></app-nav>
 <main>
     <router-outlet></router-outlet>
 </main>
-<app-footer></app-footer>
+<app-footer *ngIf="!router.url.includes('/auth')"></app-footer>

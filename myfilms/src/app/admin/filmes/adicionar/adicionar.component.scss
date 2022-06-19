@@ -84,7 +84,6 @@ mat-select {
   
   .form__field:focus {
     border-image: linear-gradient(to left, $primary-color,$tertiary-color);
-    font-size: 20px;
     transition: 0.2s ;
     border-image-slice: 1;
   }

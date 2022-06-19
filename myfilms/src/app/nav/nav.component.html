@@ -18,7 +18,7 @@
                 </li>
 
                 <!-- Admin -->
-                <li mdbRipple class="nav-item">
+                <li mdbRipple class="nav-item" *ngIf="authService.isAdmin()">
                     <a class="nav-link" [routerLink]="['/admin/filmes/listar']" routerLinkActive="active">Admin</a>
                 </li>
             </ul>
@@ -33,9 +33,22 @@
                 </li>
 
                 <!-- Login -->
-                <li class="nav-item">
-                    <a mdbRipple class="nav-link btn btn-primary btn-raised login-button" [routerLink]="['/auth/login']"><i
-                            class="far fa-user"></i> Login</a>
+                <li class="nav-item" *ngIf="!authService.isAutenticado()">
+                    <a mdbRipple class="nav-link btn btn-primary btn-raised login-button"
+                        [routerLink]="['/auth/login']"><i class="far fa-user"></i> Login</a>
+                </li>
+
+                <!-- User -->
+                <li *ngIf="authService.isAutenticado()" class="nav-item dropdown" mdbDropdown>
+                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2"
+                            mdbDropdownToggle mdbRipple aria-expanded="false">
+                            <a mdbRipple class="nav-link"><i class="far fa-user"></i> Bem vindo {{usuario.nome}}</a>
+                        </button>
+                        <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <li>
+                                <a mdbRipple class="dropdown-item" (click)="logout()">Logout</a>
+                            </li>
+                        </ul>
                 </li>
             </ul>
         </div>

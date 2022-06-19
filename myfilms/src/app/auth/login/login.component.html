@@ -1,25 +1,36 @@
 <div id="login-page">
-    <form class="login-form">
+    <form class="login-form" [formGroup]="loginForm" (ngSubmit)="logar()">
         <mat-card class="login-card">
+            <h3>Login</h3>
+
             <mat-form-field class="form__group field">
-                <input matInput class="form__field" name="email" id="email" />
+                <input matInput class="form__field" name="email" type="email" required formControlName="email"/>
                 <label for="email" class="form__label">Email</label>
+                <mat-error>
+                    Por favor forneça um e-mail válido!
+                </mat-error>
             </mat-form-field>
 
             <mat-form-field class="form__group field">
-                <input matInput class="form__field" name="senha" id="senha" />
+                <input matInput class="form__field" name="senha" type="password" required formControlName="senha"/>
                 <label for="senha" class="form__label">Senha</label>
+                <mat-error>
+                    Por favor forneça uma senha válida!
+                </mat-error>
             </mat-form-field>
 
-            <button mdbRipple class="btn btn-primary login-button"><b>Entrar</b></button>
+            <button mdbRipple class="btn btn-primary login-button" id="btn-logar"><b>Entrar</b></button>
 
+            <mat-error *ngIf="isInvalido" style="text-align: center; color: red;margin-top: 15px;">
+                O usuário e/ou senha são inválidos!
+            </mat-error>
         </mat-card>
-    </form> 
+    </form>
 
     <div class="login-texto">
-        N tem conta?
+        Não tem conta?
         <a routerLink="/auth/register">
-            Faca registro
+            Faça registro
         </a>
     </div>
 

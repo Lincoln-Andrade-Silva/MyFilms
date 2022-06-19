@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Filme } from 'src/models/Filme';
 import { Pedido } from 'src/models/Pedido';
+import { Usuario } from 'src/models/Usuario';
+import { AuthService } from 'src/services/auth.service';
 import { CarrinhoService, ItemDataSource } from 'src/services/carrinho.service';
 import { PedidosService } from 'src/services/pedidos.service';
+import { UsuarioService } from 'src/services/usuario.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -12,10 +16,12 @@ import { PedidosService } from 'src/services/pedidos.service';
 })
 export class CarrinhoComponent implements OnInit {
 
+  usuario: Usuario = new Usuario();
   deleteConfirm = false;
   filme: Filme = new Filme();
 
-  constructor(private carrinhoService: CarrinhoService, private pedidoService: PedidosService) {
+  constructor(private router: Router, private carrinhoService: CarrinhoService, private pedidoService: PedidosService,
+    private authService: AuthService, private usuarioService: UsuarioService) {
   }
 
   isCarrinhoVazio: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
@@ -30,29 +36,40 @@ export class CarrinhoComponent implements OnInit {
     this.itensDoCarrinho = this.carrinhoService.fonteDeDados;
     this.valorTotalDoPedido = this.carrinhoService.valorTotalDoPedido;
     this.isCarrinhoVazio = this.carrinhoService.isCarrinhoVazio;
+    if (this.authService.isAutenticado()){
+      const id = this.authService.usuarioLogado.id;
+      this.usuarioService.buscarPorId(String(id)).subscribe((usuario) => {
+        this.usuario = usuario;
+      });
+    }
+
   }
 
-  limpar(){
+  limpar() {
     this.carrinhoService.limpar();
   }
 
-  excluir(){
+  excluir() {
     this.carrinhoService.removerItem(this.filme)
   }
 
-  saveFilme(filme: Filme){
+  saveFilme(filme: Filme) {
     this.filme = filme
   }
 
   addPedido() {
-    const pedido = new Pedido();
-    pedido.itens = this.carrinhoService.getItens();
-    const total = this.carrinhoService.valorTotalDoPedido.value;
-    pedido.total = Number(total.toFixed(2));
-    pedido.comprador = 'admin';
-    this.pedidoService.incluir(pedido).subscribe(() => {
+    if (this.authService.isAutenticado()) {
+      const pedido = new Pedido();
+      pedido.itens = this.carrinhoService.getItens();
+      const total = this.carrinhoService.valorTotalDoPedido.value;
+      pedido.total = Number(total.toFixed(2));
+      pedido.comprador = 'admin';
+      this.pedidoService.incluir(pedido).subscribe(() => {
         this.carrinhoService.limpar();
       });
+    } else {
+      this.router.navigate(['/auth/login']);
+    }
   }
 
   formatar(valor: BehaviorSubject<number>) {

@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const auth = require('./app.json');
 
 const bcryptjs = require('bcryptjs');
@@ -72,5 +73,4 @@ module.exports = {
   gerarHash,
   incluirToken,
   autorizar
-
 };

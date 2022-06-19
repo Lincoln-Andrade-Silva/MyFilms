@@ -62,7 +62,7 @@ export class PedidosComponent implements OnInit {
   }
 
   excluir(id: number) {
-    this.service.excluir(id).subscribe(() => {
+    this.service.excluir(String(id)).subscribe(() => {
       this.getList();
     });
   }

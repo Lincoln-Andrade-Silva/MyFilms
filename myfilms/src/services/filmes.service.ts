@@ -2,41 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Filme } from 'src/models/Filme';
+import { genericCRUD } from './generic-crud.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class FilmesService {
+export class FilmesService extends genericCRUD<Filme> {
 
-  filmes: Filme[];
-
-
-  URL = "http://localhost:3001/filmes";
-
-  constructor(private http: HttpClient) {
-    this.filmes = [];
-  }
-
-  buscarPorId(id: string): Observable<Filme> {
-    return this.http.get<Filme>(this.URL + "/" + id);
-  }
-
-  listar(): Observable<Filme[]> {
-    return this.http.get<Filme[]>(this.URL);
-  }
-
-  incluir(filme: Filme): Observable<any> {
-    return this.http.post<any>(this.URL, filme);
-  }
-
-  atualizar(filme: Filme): Observable<any> {
-    const path = `${this.URL}/${filme.id}`
-    return this.http.put<Filme>(path, filme);
-  }
-
-  excluir(id: number): Observable<any> {
-    return this.http.delete<any>(this.URL + "/" + id);
-  }
+  constructor(protected override http: HttpClient) {
+    super(http, "http://localhost:3001/filmes");
+   }
 
   group_by(lista: any[], coluna: string) {
     var colunas: any = {};

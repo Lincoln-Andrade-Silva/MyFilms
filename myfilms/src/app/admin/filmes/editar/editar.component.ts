@@ -34,7 +34,7 @@ export class EditarComponent implements OnInit {
   }
 
   atualizarFilme() {
-    this.service.atualizar(this.filme).subscribe(() => {
+    this.service.atualizar(String(this.filme.id),this.filme).subscribe(() => {
       this.router.navigate(['/admin/filmes/listar']);
     });
 

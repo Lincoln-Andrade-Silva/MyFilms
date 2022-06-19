@@ -9,7 +9,7 @@ import { genericCRUD } from './generic-crud.service';
 export class UsuarioService extends genericCRUD<Usuario>{
 
   constructor(protected override http: HttpClient) {
-    super(http, "http://localhost:3001/auth");
+    super(http, "http://localhost:3001/users");
    }
 
 }
